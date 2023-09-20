@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: aliceblue;
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+	/* height: 100vh; */
+}
+
+body {
+	background-color: #142d4c;
+	height: 100vh;
+}
+
+main {
+	margin-top: 50px;
+}
+
+button.primary {
+	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	border: 0;
+	border-radius: 3em;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+
+	opacity: 0.9;
+	transition: opacity 50ms ease;
+
+	color: white;
+	background-color: #1ea7fd;
+}
+
+button.primary:hover {
+	opacity: 1;
+}
