@@ -11,7 +11,7 @@ export const ListElement = ({
 	profilePicture,
 	userName,
 	viewers,
-}: ChannelListElement) => {
+}: ChannelListElement): JSX.Element => {
 	return (
 		<div className="expanded-side-bar-channel-data-banner-container">
 			<div className="expanded-channel-data-container profilePicture">
@@ -44,7 +44,7 @@ export const ListElement = ({
 export const PopulatedChannelsList = ({
 	channels,
 	channelListTitle,
-}: ChannelsList) => {
+}: ChannelsList): JSX.Element => {
 	const [listLength, setListLength] = useState(6);
 	const [channelsDisplay, setChannelsDisplay] = useState(channels);
 
@@ -91,6 +91,6 @@ export const PopulatedChannelsList = ({
 	);
 };
 
-export const EmptyChannelsList = () => {
+export const EmptyChannelsList = (): JSX.Element => {
 	return <div>emptyChannelsList</div>;
 };

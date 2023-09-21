@@ -23,7 +23,7 @@ export default function PrimaryLayout({
 	children,
 }: {
 	children: React.ReactNode;
-}) {
+}): JSX.Element {
 	const isSideBarToggled = useLayoutStore((state) => state.sideBarToggled);
 
 	return (

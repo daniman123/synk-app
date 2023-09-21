@@ -7,7 +7,7 @@ import {
 
 export const ExpandedFollowedList = ({
 	followedChannels,
-}: FollowedChannelsList) => {
+}: FollowedChannelsList): JSX.Element => {
 	return (
 		<div className="side-bar-expanded-followed-users-list-container">
 			{followedChannels && followedChannels.length ? (

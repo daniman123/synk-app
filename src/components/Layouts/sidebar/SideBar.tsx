@@ -7,7 +7,7 @@ const SideBar = ({
 	isExpanded,
 	followedChannels,
 	recommendedChannels,
-}: ISideBar) => {
+}: ISideBar): JSX.Element => {
 	return (
 		<div
 			className={`SideBar-container${isExpanded ? " expanded" : " collapsed"}`}

@@ -7,7 +7,7 @@ import {
 
 export const ExpandedRecommendedList = ({
 	recommendedChannels,
-}: RecommendedChannelsList) => {
+}: RecommendedChannelsList): JSX.Element => {
 	return (
 		<div className="side-bar-expanded-recommended-users-list-container">
 			{recommendedChannels && recommendedChannels.length ? (

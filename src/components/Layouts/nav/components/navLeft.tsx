@@ -5,7 +5,7 @@ export const LeftBodyToggleButton = ({
 	toggleSideBar,
 }: {
 	toggleSideBar: () => void;
-}) => {
+}): JSX.Element => {
 	return (
 		<div className="nav-bar-toggle-leftBody-container">
 			<div className="nav-bar-toggle-leftBody" onClick={toggleSideBar}>
@@ -19,7 +19,7 @@ export const NavBarLogo = ({
 	expandSideBar,
 }: {
 	expandSideBar: () => void;
-}) => {
+}): JSX.Element => {
 	// TODO: add logo
 	return (
 		<div className="nav-bar-logo-container">
@@ -32,7 +32,7 @@ export const NavBarLogo = ({
 	);
 };
 
-export const NavLeft = () => {
+export const NavLeft = (): JSX.Element => {
 	const { toggleSideBar, expandSideBar } = useLayoutStore();
 	return (
 		<div className="nav-bar-container">

@@ -7,7 +7,7 @@ import { ExpandedRecommendedList } from "./expandedRecommendedList";
 export const ExpandedSideBar = ({
 	followedChannels,
 	recommendedChannels,
-}: ChannelLists) => {
+}: ChannelLists): JSX.Element => {
 	return (
 		<div className="side-bar-expanded-container">
 			<div className="side-bar-expanded-content-containers-wrapper">

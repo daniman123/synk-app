@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export const ExpandedActionButtons = () => {
+export const ExpandedActionButtons = (): JSX.Element => {
 	return (
 		<div className="side-bar-expanded-action-buttons-container">
 			<div className="expanded-action-buttons-list-container">

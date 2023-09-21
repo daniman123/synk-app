@@ -4,7 +4,7 @@ import { ChannelLists } from "../../types";
 export const CollapsedSideBar = ({
 	followedChannels,
 	recommendedChannels,
-}: ChannelLists) => {
+}: ChannelLists): JSX.Element => {
 	console.log(followedChannels, recommendedChannels);
 	return <div className="side-bar-collapsed-container"></div>;
 };
