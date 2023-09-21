@@ -4,10 +4,10 @@ import { ChannelLists } from "../../types";
 import { ExpandedFollowedList } from "./expandedFollowedList";
 import { ExpandedRecommendedList } from "./expandedRecommendedList";
 
-export const ExpandedSideBar: React.FC<ChannelLists> = ({
+export const ExpandedSideBar = ({
 	followedChannels,
 	recommendedChannels,
-}) => {
+}: ChannelLists) => {
 	return (
 		<div className="side-bar-expanded-container">
 			<div className="side-bar-expanded-content-containers-wrapper">

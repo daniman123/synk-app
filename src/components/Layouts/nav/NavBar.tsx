@@ -7,7 +7,7 @@ export interface INavBar {
 	isLoggedIn: boolean;
 }
 
-const NavBar: React.FC<INavBar> = ({ isLoggedIn }) => {
+const NavBar = ({ isLoggedIn }: INavBar) => {
 	return (
 		<header className="header-layout">
 			<nav className="nav-layout">

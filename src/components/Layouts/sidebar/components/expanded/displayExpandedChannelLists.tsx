@@ -4,14 +4,14 @@ import React, { useEffect, useState } from "react";
 import { ChannelListElement, ChannelsList } from "../../types";
 import Image from "next/image";
 
-export const ListElement: React.FC<ChannelListElement> = ({
+export const ListElement = ({
 	category,
 	id,
 	isLive,
 	profilePicture,
 	userName,
 	viewers,
-}) => {
+}: ChannelListElement) => {
 	return (
 		<div className="expanded-side-bar-channel-data-banner-container">
 			<div className="expanded-channel-data-container profilePicture">
@@ -41,10 +41,10 @@ export const ListElement: React.FC<ChannelListElement> = ({
 	);
 };
 
-export const PopulatedChannelsList: React.FC<ChannelsList> = ({
+export const PopulatedChannelsList = ({
 	channels,
 	channelListTitle,
-}) => {
+}: ChannelsList) => {
 	const [listLength, setListLength] = useState(6);
 	const [channelsDisplay, setChannelsDisplay] = useState(channels);
 

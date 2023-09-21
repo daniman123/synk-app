@@ -5,13 +5,16 @@ import {
 	PopulatedChannelsList,
 } from "./displayExpandedChannelLists";
 
-export const ExpandedRecommendedList: React.FC<RecommendedChannelsList> = ({
+export const ExpandedRecommendedList = ({
 	recommendedChannels,
-}) => {
+}: RecommendedChannelsList) => {
 	return (
 		<div className="side-bar-expanded-recommended-users-list-container">
 			{recommendedChannels && recommendedChannels.length ? (
-				<PopulatedChannelsList channels={recommendedChannels} channelListTitle="RECOMMENDED CHANNELS"/>
+				<PopulatedChannelsList
+					channels={recommendedChannels}
+					channelListTitle="RECOMMENDED CHANNELS"
+				/>
 			) : (
 				<EmptyChannelsList />
 			)}

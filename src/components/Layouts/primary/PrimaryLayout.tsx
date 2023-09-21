@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import jsonDataFollowing from "../../../../mockDataJson/FOLLOWED_CHANNELS_LIST_MOCK_DATA.json";
 import jsonDataRecommended from "../../../../mockDataJson/RECOMMENDED_CHANNELS_LIST_MOCK_DATA.json";
 import { useLayoutStore } from "../../../store/layoutStore";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,10 @@ export const metadata: Metadata = {
 	title: "Synk",
 	description: "Live Streaming website",
 };
+
+export interface PrimaryLayoutProps {
+	children: ReactNode;
+}
 
 export default function PrimaryLayout({
 	children,

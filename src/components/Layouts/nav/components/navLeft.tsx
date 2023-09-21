@@ -1,9 +1,11 @@
 import { useLayoutStore } from "../../../../store/layoutStore";
 import React from "react";
 
-export const LeftBodyToggleButton: React.FC<{
+export const LeftBodyToggleButton = ({
+	toggleSideBar,
+}: {
 	toggleSideBar: () => void;
-}> = ({ toggleSideBar }) => {
+}) => {
 	return (
 		<div className="nav-bar-toggle-leftBody-container">
 			<div className="nav-bar-toggle-leftBody" onClick={toggleSideBar}>
@@ -13,9 +15,11 @@ export const LeftBodyToggleButton: React.FC<{
 	);
 };
 
-export const NavBarLogo: React.FC<{
+export const NavBarLogo = ({
+	expandSideBar,
+}: {
 	expandSideBar: () => void;
-}> = ({ expandSideBar }) => {
+}) => {
 	// TODO: add logo
 	return (
 		<div className="nav-bar-logo-container">

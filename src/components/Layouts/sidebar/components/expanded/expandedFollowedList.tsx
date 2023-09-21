@@ -5,9 +5,9 @@ import {
 	PopulatedChannelsList,
 } from "./displayExpandedChannelLists";
 
-export const ExpandedFollowedList: React.FC<FollowedChannelsList> = ({
+export const ExpandedFollowedList = ({
 	followedChannels,
-}) => {
+}: FollowedChannelsList) => {
 	return (
 		<div className="side-bar-expanded-followed-users-list-container">
 			{followedChannels && followedChannels.length ? (

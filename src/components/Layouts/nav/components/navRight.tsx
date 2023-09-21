@@ -41,7 +41,7 @@ export const DashboardButton = () => {
 	);
 };
 
-export const NavRight: React.FC<INavBar> = ({ isLoggedIn }) => {
+export const NavRight = ({ isLoggedIn }: INavBar) => {
 	// TODO: add fns to auth btns
 	return (
 		<div className="nav-bar-container">

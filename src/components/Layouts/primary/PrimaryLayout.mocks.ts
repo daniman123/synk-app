@@ -1,9 +1,9 @@
-import { IPrimaryLayout } from './PrimaryLayout';
+import { PrimaryLayoutProps } from "./PrimaryLayout";
 
-    const base: IPrimaryLayout = {
-      sampleTextProp: 'Hello world!',
-    };
-    
-    export const mockPrimaryLayoutProps = {
-      base,
-    };
+const base: PrimaryLayoutProps = {
+	children: "Hello world!",
+};
+
+export const mockPrimaryLayoutProps = {
+	base,
+};
