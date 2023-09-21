@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import jsonDataFollowing from "../../../../mockDataJson/FOLLOWED_CHANNELS_LIST_MOCK_DATA.json";
 import jsonDataRecommended from "../../../../mockDataJson/RECOMMENDED_CHANNELS_LIST_MOCK_DATA.json";
+import { useLayoutStore } from "../../../store/layoutStore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,14 @@ export default function PrimaryLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const isSideBarToggled = useLayoutStore((state) => state.sideBarToggled);
+
 	return (
 		<html lang="en">
 			<body className={inter.className}>
 				<NavBar isLoggedIn={false} />
 				<SideBar
-					isExpanded={true}
+					isExpanded={isSideBarToggled}
 					followedChannels={jsonDataFollowing}
 					recommendedChannels={jsonDataRecommended}
 				/>

@@ -13,7 +13,7 @@
 	align-items: center;
 }
 .SideBar-container.collapsed {
-	width: 7%;
+	width: 3%;
 }
 
 div.side-bar-expanded-container {
@@ -21,10 +21,10 @@ div.side-bar-expanded-container {
 	position: relative;
 	overflow-y: scroll;
 
-	left: 5%;
+	left: 3%;
 
 	height: 100%;
-	width: 95%;
+	width: 100%;
 }
 
 /* For Webkit-based browsers (Chrome, Safari) */
@@ -112,7 +112,7 @@ div.side-bar-expanded-followed-users-list-container {
 
 div.expanded-side-bar-populated-followed {
 	width: 100%;
-	border-bottom: 1px solid coral;
+	border-bottom: 1px solid rgba(109, 147, 250, 0.349);
 	border-radius: 0.25rem;
 	cursor: pointer;
 }
@@ -124,8 +124,7 @@ div.expanded-side-bar-populated-followed:hover {
 div.expanded-side-bar-channel-data-banner-container {
 	display: grid;
 	position: relative;
-	/* left: -5%; */
-	grid-template-columns: 0.1fr 1fr 0.1fr;
+	grid-template-columns: 0.1fr 0.85fr 0.1fr;
 	width: 90%;
 }
 
@@ -179,8 +178,10 @@ div.expanded-meta-data.category {
 .expanded-channel-data-container.broadcast-meta-data
 	> .expanded-broadcast-meta-data {
 	display: flex;
-	justify-content: center;
+	position: absolute;
+
 	align-items: center;
+	top: 12px;
 }
 
 :root {
@@ -201,7 +202,7 @@ div.expanded-meta-data.viewers {
 	font-size: 14px;
 }
 
-div.show-n-channel-togglers{
+div.show-n-channel-togglers {
 	display: flex;
 	justify-content: space-between;
 }
