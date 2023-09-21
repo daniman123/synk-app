@@ -1,3 +1,5 @@
+"use client"
+
 import { useLayoutStore } from "../../../../store/layoutStore";
 import React from "react";
 

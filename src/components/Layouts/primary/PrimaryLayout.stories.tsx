@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import PrimaryLayout from "./PrimaryLayout";
 import { mockPrimaryLayoutProps } from "./PrimaryLayout.mocks";
 

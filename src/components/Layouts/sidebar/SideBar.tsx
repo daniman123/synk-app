@@ -1,28 +1,28 @@
+"use client";
+
+import { useLayoutStore } from "../../../store/layoutStore";
 import "./SideBar.css";
-import { CollapsedSideBar } from "./components/collapsed/collapsedSideBar";
 import { ExpandedSideBar } from "./components/expanded/expandedSideBar";
-import { ISideBar } from "./types";
+import { ChannelLists } from "./types";
 
 const SideBar = ({
-	isExpanded,
 	followedChannels,
 	recommendedChannels,
-}: ISideBar): JSX.Element => {
+}: ChannelLists): JSX.Element => {
+	const isSideBarToggled = useLayoutStore((state) => state.sideBarToggled);
+
 	return (
 		<div
-			className={`SideBar-container${isExpanded ? " expanded" : " collapsed"}`}
+			className={`SideBar-container${
+				isSideBarToggled ? " expanded" : " collapsed"
+			}`}
 		>
-			{isExpanded ? (
+			{isSideBarToggled ? (
 				<ExpandedSideBar
 					followedChannels={followedChannels}
 					recommendedChannels={recommendedChannels}
 				/>
-			) : (
-				<CollapsedSideBar
-					followedChannels={followedChannels}
-					recommendedChannels={recommendedChannels}
-				/>
-			)}
+			) : null}
 		</div>
 	);
 };
