@@ -31,7 +31,7 @@ export const AuthInput = ({
 const Login = ({ exampleProp }: ILogin) => {
 	console.log(exampleProp);
 	return (
-		<dialog open={exampleProp} className="auth-handler-dialog">
+		<dialog open className="auth-handler-dialog">
 			<div className="Login-container">
 				<div className="auth-title-container">
 					<h4 className="auth-title-dialog">Login</h4>
@@ -49,7 +49,7 @@ const Login = ({ exampleProp }: ILogin) => {
 								inputType="password"
 								authLabel="Password"
 							/>
-							<button className="submit-auth" type="submit">
+							<button className="primary submit-auth" type="submit">
 								Login
 							</button>
 						</form>

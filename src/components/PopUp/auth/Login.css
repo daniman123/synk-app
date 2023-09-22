@@ -1,9 +1,17 @@
 dialog.auth-handler-dialog {
-	display: block;
+	display: flex;
 	position: relative;
+	
+	left: 40%;
+	top: 5rem;
+
 	height: 23rem;
 	width: 25rem;
 	background-color: rgba(37, 79, 158, 0.808);
+	border-radius: 1rem;
+	box-shadow: 0 0 15px black;
+	z-index: 100;
+	
 }
 
 .Login-container {
@@ -26,9 +34,9 @@ h4.auth-title-dialog {
 
 form.auth-form {
 	display: grid;
-	gap: 1.5rem;
-	padding-block: 1rem;
-	padding-inline: 4rem;
+	gap: 1.2rem;
+	padding-block: .1rem;
+	padding-inline: 3rem;
 }
 
 label.auth-input-label {
@@ -43,12 +51,13 @@ label.auth-input-label {
 
 input.auth-input {
 	margin-top: 0.5rem;
-	border-radius: 0.25rem;
-	height: 20px;
+	border-radius: 0.7rem;
+	height: 30px;
+	width: 200px;
 	color: black;
 }
 
-button.submit-auth {
-	background-color: cornflowerblue;
-	border-radius: 0.25rem;
+button.primary.submit-auth {
+	border-radius: 0.5rem;
+	height: 25px;
 }

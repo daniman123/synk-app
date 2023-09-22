@@ -6,9 +6,9 @@ import { mockLoginProps } from "./Login.mocks";
 const meta = {
 	title: "PopUp/Login",
 	component: Login,
-  parameters:{
-    layout:"centered"
-  }
+	parameters: {
+		layout: "centered",
+	},
 } satisfies Meta<typeof Login>;
 
 export default meta;

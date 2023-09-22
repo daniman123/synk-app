@@ -17,12 +17,6 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<PrimaryLayout>{children}</PrimaryLayout>
-				{/* <NavBar isLoggedIn={false} />
-				<SideBar
-					followedChannels={jsonDataFollowing}
-					recommendedChannels={jsonDataRecommended}
-				/>
-				{children} */}
 			</body>
 		</html>
 	);

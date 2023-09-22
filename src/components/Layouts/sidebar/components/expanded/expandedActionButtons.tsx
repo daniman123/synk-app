@@ -6,7 +6,7 @@ export const ExpandedActionButtons = (): JSX.Element => {
 		<div className="side-bar-expanded-action-buttons-container">
 			<div className="expanded-action-buttons-list-container">
 				<div className="expanded-action-button">
-					<Link href={"/home"}>
+					<Link href={"/"}>
 						<span>Home</span>
 					</Link>
 				</div>

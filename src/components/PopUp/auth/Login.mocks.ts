@@ -1,9 +1,9 @@
-import { ILogin } from './Login';
+import { ILogin } from "./Login";
 
-    const base: ILogin = {
-      exampleProp: true,
-    };
-    
-    export const mockLoginProps = {
-      base,
-    };
+const base: ILogin = {
+	exampleProp: true,
+};
+
+export const mockLoginProps = {
+	base,
+};
