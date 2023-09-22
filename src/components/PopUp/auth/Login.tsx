@@ -1,28 +1,56 @@
 import "./Login.css";
 
 export interface ILogin {
-	exampleProp: string;
+	exampleProp: boolean;
 }
+
+export interface IAuthInput {
+	authInputName: string;
+	inputType: string;
+	authLabel: string;
+}
+
+export const AuthInput = ({
+	authInputName,
+	inputType,
+	authLabel,
+}: IAuthInput) => {
+	return (
+		<div className={"input-container" + authInputName}>
+			<label>
+				{authLabel}
+				<input type={inputType} name={authInputName} id={authInputName} />
+			</label>
+		</div>
+	);
+};
 
 const Login = ({ exampleProp }: ILogin) => {
 	console.log(exampleProp);
 	return (
-		<div className="Login-container">
-			<div className="auth-handler-login-container">
-				<div className="auth-handler-login">
-					<div className="auth-input-container">
-						<div className="input-container user-name">
-							<h3>Login</h3>
-							<input className="auth-handler-input user-name" type="text" />
-						</div>
-						<div className="input-container password">
-							<h3>Password</h3>
-							<input className="auth-handler-input password" type="text" />
-						</div>
+		<dialog open={exampleProp} className="dees">
+			<div className="Login-container">
+				<div className="auth-handler-login-container">
+					<div className="auth-handler-login">
+						<form method="dialog" className="auth-form">
+							<AuthInput
+								authInputName={"user-name"}
+								inputType="text"
+								authLabel="Username"
+							/>
+							<AuthInput
+								authInputName={"password"}
+								inputType="password"
+								authLabel="Password"
+							/>
+							<button className="submit-auth" type="submit">
+								Login
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</dialog>
 	);
 };
 

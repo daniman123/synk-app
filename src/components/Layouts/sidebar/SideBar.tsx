@@ -16,6 +16,9 @@ const SideBar = ({
 			className={`SideBar-container${
 				isSideBarToggled ? " expanded" : " collapsed"
 			}`}
+			datatype={`SideBar-container${
+				isSideBarToggled ? " expanded" : " collapsed"
+			}`}
 		>
 			{isSideBarToggled ? (
 				<ExpandedSideBar

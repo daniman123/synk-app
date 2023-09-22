@@ -5,7 +5,9 @@ export const LoginButton = (): JSX.Element => {
 	return (
 		<div className="nav-bar-log-in-container">
 			<div className="log-in-button-container">
-				<button className="primary log-in-button">Login</button>
+				<a href={"/login"}>
+					<button className="primary log-in-button">Login</button>
+				</a>
 			</div>
 		</div>
 	);
