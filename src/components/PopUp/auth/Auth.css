@@ -1,7 +1,7 @@
 dialog.auth-handler-dialog {
 	display: flex;
 	position: relative;
-	
+
 	left: 40%;
 	top: 5rem;
 
@@ -11,13 +11,12 @@ dialog.auth-handler-dialog {
 	border-radius: 1rem;
 	box-shadow: 0 0 15px black;
 	z-index: 100;
-	
 }
 
-.Login-container {
+.Auth-container {
 	display: grid;
-	gap: 2rem;
-	padding-block: 4rem;
+	gap: 1rem;
+	padding-block: 2rem;
 	padding-inline: 3rem;
 }
 
@@ -35,7 +34,7 @@ h4.auth-title-dialog {
 form.auth-form {
 	display: grid;
 	gap: 1.2rem;
-	padding-block: .1rem;
+	padding-block: 0.1rem;
 	padding-inline: 3rem;
 }
 

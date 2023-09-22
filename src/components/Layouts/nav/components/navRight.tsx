@@ -1,13 +1,14 @@
 import React from "react";
 import { INavBar } from "../NavBar";
+import Link from "next/link";
 
 export const LoginButton = (): JSX.Element => {
 	return (
 		<div className="nav-bar-log-in-container">
 			<div className="log-in-button-container">
-				<a href={"/login"}>
+				<Link href={"/auth/login"}>
 					<button className="primary log-in-button">Login</button>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
@@ -17,7 +18,9 @@ export const SignUpButton = (): JSX.Element => {
 	return (
 		<div className="nav-bar-sign-up-container">
 			<div className="sign-up-button-container">
-				<button className="primary sign-up-button">Sign up</button>
+				<Link href={"/auth/signup"}>
+					<button className="primary sign-up-button">Sign up</button>
+				</Link>
 			</div>
 		</div>
 	);

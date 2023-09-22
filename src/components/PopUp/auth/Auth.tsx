@@ -1,8 +1,5 @@
-import "./Login.css";
-
-export interface ILogin {
-	exampleProp: boolean;
-}
+import "./Auth.css";
+import { AuthMetaData } from "./authTypes";
 
 export interface IAuthInput {
 	authInputName: string;
@@ -28,29 +25,31 @@ export const AuthInput = ({
 	);
 };
 
-const Login = ({ exampleProp }: ILogin) => {
-	console.log(exampleProp);
+const Auth = (props: AuthMetaData) => {
 	return (
 		<dialog open className="auth-handler-dialog">
-			<div className="Login-container">
+			<div className="Auth-container">
 				<div className="auth-title-container">
-					<h4 className="auth-title-dialog">Login</h4>
+					<h4 className="auth-title-dialog">{props.title}</h4>
 				</div>
-				<div className="auth-handler-login-container">
-					<div className="auth-handler-login">
+				<div className="auth-handler-container">
+					<div className="auth-handler">
 						<form method="dialog" className="auth-form">
-							<AuthInput
-								authInputName={"user-name"}
-								inputType="text"
-								authLabel="Username"
-							/>
-							<AuthInput
-								authInputName={"password"}
-								inputType="password"
-								authLabel="Password"
-							/>
+							{Object.entries(props.inputMetaData).map((val, index) => {
+								let firstLetter = val[1].charAt(0).toUpperCase();
+								let modifiedString = firstLetter + val[1].slice(1);
+								return (
+									<AuthInput
+										key={index + val[1]}
+										authInputName={val[1]}
+										inputType={val[0] == "userName" ? "text" : val[0]}
+										authLabel={modifiedString}
+									/>
+								);
+							})}
+
 							<button className="primary submit-auth" type="submit">
-								Login
+								{props.title}
 							</button>
 						</form>
 					</div>
@@ -60,4 +59,4 @@ const Login = ({ exampleProp }: ILogin) => {
 	);
 };
 
-export default Login;
+export default Auth;
