@@ -17,10 +17,13 @@ export const AuthInput = ({
 }: IAuthInput) => {
 	return (
 		<div className={"input-container" + authInputName}>
-			<label>
-				{authLabel}
-				<input type={inputType} name={authInputName} id={authInputName} />
-			</label>
+			<label className="auth-input-label">{authLabel}</label>
+			<input
+				className="auth-input"
+				type={inputType}
+				name={authInputName}
+				id={authInputName}
+			/>
 		</div>
 	);
 };
@@ -28,8 +31,11 @@ export const AuthInput = ({
 const Login = ({ exampleProp }: ILogin) => {
 	console.log(exampleProp);
 	return (
-		<dialog open={exampleProp} className="dees">
+		<dialog open={exampleProp} className="auth-handler-dialog">
 			<div className="Login-container">
+				<div className="auth-title-container">
+					<h4 className="auth-title-dialog">Login</h4>
+				</div>
 				<div className="auth-handler-login-container">
 					<div className="auth-handler-login">
 						<form method="dialog" className="auth-form">

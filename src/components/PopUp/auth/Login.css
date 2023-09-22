@@ -1,55 +1,54 @@
-:root {
-	--auth-handler-wth: 400px;
+dialog.auth-handler-dialog {
+	display: block;
+	position: relative;
+	height: 23rem;
+	width: 25rem;
+	background-color: rgba(37, 79, 158, 0.808);
 }
 
 .Login-container {
-	display: block;
-	position: relative;
-	height: 100vh;
-	width: 100vw;
-	z-index: 100;
-	/* background-color: aquamarine; */
+	display: grid;
+	gap: 2rem;
+	padding-block: 4rem;
+	padding-inline: 3rem;
 }
 
-div.auth-handler-login-container {
-	display: block;
-	position: absolute;
-
-	left: calc(50vw - (var(--auth-handler-wth) / 2));
-	top: calc(50vh - (var(--auth-handler-wth) / 2));
-
-	height: 300px;
-	width: var(--auth-handler-wth);
-
-	background-color: cornflowerblue;
-	border-radius: 2rem;
-	box-shadow: 0 2px 10px black;
-}
-
-div.auth-handler-login {
+div.auth-title-container {
 	display: block;
 	position: relative;
-	height: 100%;
-	width: 100%;
-	/* border: 10px solid red; */
-}
-
-div.auth-input-container {
-	display: block;
-	position: relative;
-	height: 150px;
-	width: 100%;
-	top: 75px;
-}
-
-div.input-container {
-	display: block;
-	position: relative;
-	height: 75px;
 	text-align: center;
 }
-input.auth-handler-input {
-	display: block;
-	position: absolute;
-	left: 28%;
+
+h4.auth-title-dialog {
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+form.auth-form {
+	display: grid;
+	gap: 1.5rem;
+	padding-block: 1rem;
+	padding-inline: 4rem;
+}
+
+label.auth-input-label {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+input.auth-input {
+	margin-top: 0.5rem;
+	border-radius: 0.25rem;
+	height: 20px;
+	color: black;
+}
+
+button.submit-auth {
+	background-color: cornflowerblue;
+	border-radius: 0.25rem;
 }

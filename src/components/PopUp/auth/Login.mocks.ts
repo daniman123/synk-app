@@ -1,7 +1,7 @@
 import { ILogin } from './Login';
 
     const base: ILogin = {
-      sampleTextProp: 'Hello world!',
+      exampleProp: true,
     };
     
     export const mockLoginProps = {
