@@ -1,7 +1,7 @@
 import Auth from "@/components/PopUp/auth/Auth";
 import { AuthMetaData } from "@/components/PopUp/auth/authTypes";
 
-const Pagas = () => {
+const Login = async () => {
 	const loginMetaData: AuthMetaData = {
 		title: "Login",
 		inputMetaData: {
@@ -17,4 +17,4 @@ const Pagas = () => {
 	);
 };
 
-export default Pagas;
+export default Login;

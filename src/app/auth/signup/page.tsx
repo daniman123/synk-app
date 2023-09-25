@@ -1,7 +1,7 @@
 import Auth from "@/components/PopUp/auth/Auth";
 import { AuthMetaData } from "@/components/PopUp/auth/authTypes";
 
-const Pagas = () => {
+const SignUp = () => {
 	const signUpMetaData: AuthMetaData = {
 		title: "Sign Up",
 		inputMetaData: {
@@ -18,4 +18,4 @@ const Pagas = () => {
 	);
 };
 
-export default Pagas;
+export default SignUp;
