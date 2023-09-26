@@ -1,0 +1,49 @@
+div.form-container {
+	display: flex;
+	position: relative;
+
+	left: 40%;
+	top: 5rem;
+
+	height: 23rem;
+	width: 25rem;
+	background-color: rgba(37, 79, 158, 0.808);
+	border-radius: 1rem;
+	box-shadow: 0 0 15px black;
+	z-index: 100;
+}
+
+form {
+	margin-top: 5rem;
+	width: 400px;
+}
+
+div.input-field-container {
+	display: grid;
+	justify-content: center;
+	padding-block: 0.3rem;
+}
+
+label {
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+input.input-field {
+	margin-top: 0.5rem;
+	border-radius: 0.7rem;
+	height: 30px;
+	width: 200px;
+	color: black;
+	outline: none;
+	text-indent: 10px
+}
+
+button.primary.auth-submit {
+	border-radius: 0.5rem;
+	height: 25px;
+	width: 7rem;
+	margin-top: 1rem;
+	margin-left: 9rem;
+	outline: none;
+}

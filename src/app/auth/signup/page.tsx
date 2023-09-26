@@ -1,19 +1,9 @@
-import Auth from "@/components/PopUp/auth/Auth";
-import { AuthMetaData } from "@/components/PopUp/auth/authTypes";
+import AuthForm from "@/components/PopUp/auth/AuthForm";
 
 const SignUp = () => {
-	const signUpMetaData: AuthMetaData = {
-		title: "Sign Up",
-		inputMetaData: {
-			email: "email",
-			userName: "userName",
-			password: "password",
-		},
-	};
-
 	return (
 		<main className="auth-main">
-			<Auth {...signUpMetaData} />
+			<AuthForm fields={["username", "email", "password"]} endpoint="/signup" />
 		</main>
 	);
 };
