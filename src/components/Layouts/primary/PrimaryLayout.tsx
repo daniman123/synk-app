@@ -6,12 +6,10 @@ export interface PrimaryLayoutProps {
 	children: React.ReactNode;
 }
 
-export default function PrimaryLayout({
-	children,
-}: PrimaryLayoutProps): JSX.Element {
+export default async function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
 		<section>
-			<NavBar isLoggedIn={false} />
+			<NavBar />
 			<SecondaryLayout>{children}</SecondaryLayout>
 		</section>
 	);

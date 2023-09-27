@@ -1,6 +1,9 @@
-import React from "react";
-import { INavBar } from "../NavBar";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useAuthStore } from "@/store/authStore";
+import { getRefreshToken } from "../../../../../lib/auth/refreshToken";
 
 export const LoginButton = (): JSX.Element => {
 	return (
@@ -46,12 +49,30 @@ export const DashboardButton = (): JSX.Element => {
 	);
 };
 
-export const NavRight = ({ isLoggedIn }: INavBar): JSX.Element => {
+export const NavRight = (): JSX.Element => {
 	// TODO: add fns to auth btns
+	const [IsLoggedIn, setIsLoggedIn] = useState(false);
+	const { setSessionToken } = useAuthStore();
+	const userToken = useAuthStore((state) => state.userToken);
+
+	useEffect(() => {
+		async function name() {
+			try {
+				const response = await getRefreshToken();
+				const token = response.access_token;
+				setSessionToken(token);
+				setIsLoggedIn(true);
+			} catch (error) {
+				setIsLoggedIn(false);
+			}
+		}
+		name();
+	}, []);
+
 	return (
 		<div className="nav-bar-container">
 			<div className="nav-bar-right">
-				{isLoggedIn ? (
+				{IsLoggedIn || userToken ? (
 					<>
 						<LogoutButton />
 						<DashboardButton />

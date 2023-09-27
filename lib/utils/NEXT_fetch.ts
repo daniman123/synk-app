@@ -10,8 +10,9 @@ export async function makeRequest(
 	const requestOptions: RequestInit = {
 		method: method,
 		mode: "cors",
-		cache: "no-cache",
-		credentials: "same-origin",
+		// cache: "no-cache",
+		credentials: "include",
+		referrerPolicy: "origin",
 		headers: {
 			"Content-Type": "application/json",
 		},
@@ -22,7 +23,7 @@ export async function makeRequest(
 	}
 
 	const res = await fetch(BASE_URL + endpoint, requestOptions);
-	const { body } = await res.json();
-	
+	const body = await res.json();
+
 	return body;
 }

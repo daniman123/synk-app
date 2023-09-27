@@ -4,7 +4,7 @@ import PrimaryLayout from "@/components/Layouts/primary/PrimaryLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
