@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { DB_URL_BASE } from "../config";
 import { useAuthStore } from "@/store/authStore";
+import { getRefreshToken } from "../auth/refreshToken";
 
 export const useRefreshToken = () => {
-	const { setSessionToken } = useAuthStore();
-	const [refreshToken, setRefreshToken] = useState(null);
+	const { setSession } = useAuthStore();
+	const [isSessionAuth, setIsSessionAuth] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 
@@ -13,23 +13,11 @@ export const useRefreshToken = () => {
 			setIsLoading(true);
 
 			try {
-				const res = await fetch(DB_URL_BASE + "/user/protected", {
-					method: "GET",
-					mode: "cors",
-					credentials: "include",
-				});
-
-				if (!res.ok) {
-					throw new Error("Failed to fetch refresh token");
-				}
-
-				const data = await res.json();
-				console.log("🚀 ~ file: useRefreshToken.tsx:27 ~ fetchRefreshToken ~ data:", data)
-
-				// setRefreshToken(data); // Assuming your refresh token is in the response data.
-                // setSessionToken(data)
-                setError(null);
-			} catch (error) {
+				await getRefreshToken();
+				setIsSessionAuth(true);
+				setSession(true);
+				setError(null);
+			} catch (error: any) {
 				setError(error.message);
 			} finally {
 				setIsLoading(false);
@@ -37,7 +25,8 @@ export const useRefreshToken = () => {
 		};
 
 		fetchRefreshToken();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return { refreshToken, isLoading, error };
+	return { isSessionAuth, isLoading, error };
 };

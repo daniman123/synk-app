@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useAuthStore } from "@/store/authStore";
-import { getRefreshToken } from "../../../../../lib/auth/refreshToken";
+import { useRefreshToken } from "../../../../../lib/hooks/useRefreshToken";
+import { handleLogOut } from "../../../../../lib/auth/logout";
 
 export const LoginButton = (): JSX.Element => {
 	return (
@@ -30,10 +29,16 @@ export const SignUpButton = (): JSX.Element => {
 };
 
 export const LogoutButton = (): JSX.Element => {
+	const handleClick = async () => {
+		await handleLogOut();
+	};
+
 	return (
 		<div className="nav-bar-log-out-container">
 			<div className="log-out-button-container">
-				<button className="primary log-out-button">Logout</button>
+				<button className="primary log-out-button" onClick={handleClick}>
+					Logout
+				</button>
 			</div>
 		</div>
 	);
@@ -50,29 +55,12 @@ export const DashboardButton = (): JSX.Element => {
 };
 
 export const NavRight = (): JSX.Element => {
-	// TODO: add fns to auth btns
-	const [IsLoggedIn, setIsLoggedIn] = useState(false);
-	const { setSessionToken } = useAuthStore();
-	const userToken = useAuthStore((state) => state.userToken);
-
-	useEffect(() => {
-		async function name() {
-			try {
-				const response = await getRefreshToken();
-				const token = response.access_token;
-				setSessionToken(token);
-				setIsLoggedIn(true);
-			} catch (error) {
-				setIsLoggedIn(false);
-			}
-		}
-		name();
-	}, []);
+	const { isSessionAuth, isLoading, error } = useRefreshToken();
 
 	return (
 		<div className="nav-bar-container">
 			<div className="nav-bar-right">
-				{IsLoggedIn || userToken ? (
+				{isSessionAuth && !isLoading && !error ? (
 					<>
 						<LogoutButton />
 						<DashboardButton />

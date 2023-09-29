@@ -1,21 +1,25 @@
 import { create } from "zustand";
 
 export interface AuthStore {
-	userToken: string | undefined;
+	isSessionAuth: boolean;
 	userId: number | null;
 	username: string | undefined;
-	setSessionToken: (newToken: string) => void;
+	setSession: (sessionStatus: boolean) => void;
+	toggleSession: () => void;
 	setUserId: (newUserId: number) => void;
 	setUsername: (newUsername: string | undefined) => void;
 	clearAuthStore: () => void;
 }
 
 export const useAuthStore = create<AuthStore>((set) => ({
-	userToken: "",
+	isSessionAuth: false,
 	userId: null,
 	username: "",
-	setSessionToken: (newToken) => set({ userToken: newToken }),
+	setSession: (sessionStatus: boolean) => set({ isSessionAuth: sessionStatus }),
+	toggleSession: () =>
+		set((state) => ({ isSessionAuth: state.isSessionAuth! })),
 	setUserId: (newUserId) => set({ userId: newUserId }),
 	setUsername: (newUsername) => set({ username: newUsername }),
-	clearAuthStore: () => set({ userToken: "", userId: null, username: "" }),
+	clearAuthStore: () =>
+		set({ isSessionAuth: false, userId: null, username: "" }),
 }));
