@@ -15,3 +15,10 @@ export const config = {
 		},
 	],
 };
+
+export const empty_cookie_headers = {
+	"Set-Cookie": [
+		"jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;",
+		"user_credentials=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;",
+	] as unknown as string,
+};

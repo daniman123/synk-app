@@ -1,11 +1,10 @@
 import { NextRequest } from "next/server";
-import { DB_URL } from "../../../../../lib/config";
+import { DB_URL, empty_cookie_headers } from "../../../../../lib/config";
 
 export async function POST(req: NextRequest) {
 	const path = DB_URL.LOGOUT;
 
 	const cookies = req.cookies;
-
 	const credentials = cookies.get("user_credentials");
 
 	const requestOptions: RequestInit = {
@@ -20,16 +19,10 @@ export async function POST(req: NextRequest) {
 	};
 
 	await fetch(path, requestOptions);
-	const payload = JSON.stringify({ action: "user LogOut" });
-	const responseHeaders = {
-		"Set-Cookie": [
-			"jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;",
-			"user_credentials=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;",
-		],
-	};
+	const payload = JSON.stringify({ action: "user logged out" });
 
 	return new Response(payload, {
 		status: 200,
-		headers: responseHeaders,
+		headers: empty_cookie_headers,
 	});
 }

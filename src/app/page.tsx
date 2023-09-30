@@ -1,7 +1,5 @@
-"use client";
-
 const Home = (): JSX.Element => {
-	return <main>Homessssssssssssssssssssssssss</main>;
+	return <main className="content-main"></main>;
 };
 
 export default Home;
