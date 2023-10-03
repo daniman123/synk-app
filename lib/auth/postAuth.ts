@@ -1,7 +1,11 @@
+import { IPostRequestData } from "../utils/NEXT_fetch";
 import { NextRequest } from "next/server";
 
-export async function postAuth(req: NextRequest, endpoint: string) {
-	const body = await req.json();
+export async function postAuth(
+	req: NextRequest,
+	endpoint: string
+): Promise<Response> {
+	const body: IPostRequestData = await req.json();
 
 	const requestOptions: RequestInit = {
 		method: "POST",
@@ -15,23 +19,24 @@ export async function postAuth(req: NextRequest, endpoint: string) {
 
 	requestOptions.body = JSON.stringify(body);
 
-	const rest = await fetch(endpoint, requestOptions);
-	const cookies = rest.headers.getSetCookie();
+	const serverResponse = await fetch(endpoint, requestOptions);
+	const serverCookies = serverResponse.headers.getSetCookie();
+	const cookies = serverCookies[0]?.toString();
 
-	const payload = await rest.json();
+	const payload = await serverResponse.json();
+	const pay = JSON.stringify(payload);
 
-	const jwt = cookies[0]?.toString();
-	const credentials = cookies[0]?.toString();
 	const searchString = "user_credentials=";
-	const startIndex = credentials.indexOf(searchString);
+	const startIndex = cookies?.indexOf(searchString) as number;
 
 	if (startIndex !== -1) {
-		const result = credentials.substring(startIndex);
-		console.log(result);
-		const pay = JSON.stringify(payload);
+		const result = cookies?.substring(startIndex);
 
-		const responseHeaders = {
-			"Set-Cookie": [`${jwt}; Path=/; HttpOnly;`, `${result};`],
+		const responseHeaders: HeadersInit = {
+			"Set-Cookie": [
+				`${cookies}; Path=/; HttpOnly;`,
+				`${result};`,
+			] as unknown as string,
 		};
 
 		return new Response(pay, {
@@ -39,4 +44,8 @@ export async function postAuth(req: NextRequest, endpoint: string) {
 			headers: responseHeaders,
 		});
 	}
+
+	return new Response(pay, {
+		status: 400,
+	});
 }

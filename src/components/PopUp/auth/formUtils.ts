@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthStore } from "@/store/authStore";
 import { makeRequest } from "../../../../lib/utils/NEXT_fetch";
-// import { useRouter } from "next/navigation";
 
 export const initializeFormData = (fields: string[]) => {
 	const initialData: InitialData = {};
@@ -12,8 +11,6 @@ export const initializeFormData = (fields: string[]) => {
 };
 
 export const useForm = (initialData: InitialData, endpoint: string) => {
-	// const history = useRouter();
-
 	const [formData, setFormData] = useState(initialData);
 	const { setUserId, setUsername, setSession } = useAuthStore();
 
@@ -31,7 +28,6 @@ export const useForm = (initialData: InitialData, endpoint: string) => {
 		setUserId(user_id);
 		setSession(true);
 		window.location.href = "/";
-		// history.push("/");
 	};
 	return { formData, handleChange, handleSubmit };
 };

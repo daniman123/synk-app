@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect } from "react";
 import "./HeroSection.css";
+import HeroSectionItem from "./components/HeroSectionItem";
 
 export interface IHeroSection {
 	exampleProp: string;
@@ -9,38 +13,18 @@ const HeroSection = ({ exampleProp }: IHeroSection) => {
 		<div className="HeroSection-container">
 			<div className="hero-section">
 				<div className="hero-section-content-container">
+					<div className="hero-section-content-container-controller left"></div>
+					<button className="hero-section-controller-button left"></button>
 					<div className="hero-section-content">
-						<div className="hero-section-content-item-container">
-							<div className="hero-section-content-item-wrapper">
-								<div className="hero-section-content-item">
-									<div className="hero-section-content-item-video-container">
-										<div className="hero-section-video">hero-section-video</div>
-									</div>
-									{/* <div className="hero-section-content-item-meta-data">
-										meta data 1
-									</div> */}
-								</div>
-							</div>
-						</div>
-						<div className="hero-section-content-item-container">
-							<div className="hero-section-content-item-wrapper">
-								<div className="hero-section-content-item">
-									<div className="hero-section-content-item-meta-data">
-										item 2
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="hero-section-content-item-container">
-							<div className="hero-section-content-item-wrapper">
-								<div className="hero-section-content-item">
-									<div className="hero-section-content-item-meta-data">
-										item 3
-									</div>
-								</div>
-							</div>
-						</div>
+						<HeroSectionItem src={exampleProp} itemType="" />
+						<HeroSectionItem src={exampleProp} itemType="" />
+						<HeroSectionItem src={exampleProp} itemType="" />
+						<HeroSectionItem src={exampleProp} itemType="" />
+						<HeroSectionItem src={exampleProp} itemType="" />
+						<HeroSectionItem src={exampleProp} itemType="" />
 					</div>
+					<div className="hero-section-content-container-controller right"></div>
+					<button className="hero-section-controller-button right"></button>
 				</div>
 			</div>
 		</div>

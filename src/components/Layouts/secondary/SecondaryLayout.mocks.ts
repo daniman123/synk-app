@@ -1,9 +1,9 @@
-import { ISecondaryLayout } from './SecondaryLayout';
+import { ISecondaryLayout } from "./SecondaryLayout";
 
-    const base: ISecondaryLayout = {
-      sampleTextProp: 'Hello world!',
-    };
-    
-    export const mockSecondaryLayoutProps = {
-      base,
-    };
+const base: ISecondaryLayout = {
+	children: "<HeroSection />",
+};
+
+export const mockSecondaryLayoutProps = {
+	base,
+};

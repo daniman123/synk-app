@@ -2,10 +2,16 @@ import { LOCAL_URL } from "../api_paths";
 
 const BASE_URL = LOCAL_URL + "/api/auth";
 
+export interface IPostRequestData {
+	username: string;
+	email?: string;
+	password: string;
+}
+
 export async function makeRequest(
 	method: string,
 	endpoint: string,
-	requestData?: any
+	requestData?: InitialData | IPostRequestData
 ) {
 	const requestOptions: RequestInit = {
 		method: method,

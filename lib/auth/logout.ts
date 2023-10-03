@@ -1,4 +1,4 @@
-export async function handleLogOut() {
+export async function handleLogOut(): Promise<void> {
 	try {
 		const requestOptions: RequestInit = {
 			method: "POST",

@@ -6,7 +6,7 @@ export interface PrimaryLayoutProps {
 	children: React.ReactNode;
 }
 
-export default async function PrimaryLayout({ children }: PrimaryLayoutProps) {
+export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
 		<section>
 			<NavBar />

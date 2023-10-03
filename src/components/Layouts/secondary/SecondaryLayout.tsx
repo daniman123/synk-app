@@ -6,7 +6,7 @@ import "./SecondaryLayout.css";
 export interface ISecondaryLayout {
 	children: React.ReactNode;
 }
-const SecondaryLayout = async ({ children }: ISecondaryLayout) => {
+const SecondaryLayout = ({ children }: ISecondaryLayout) => {
 	return (
 		<div className="SecondaryLayout-container">
 			<SideBar
