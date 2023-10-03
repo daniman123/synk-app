@@ -24,27 +24,23 @@ div.hero-section-content-container {
 	border-radius: 0.25rem;
 	background-color: rgba(59, 112, 212, 0.637);
 	box-shadow: 0 0 0.7rem black;
-
-	/* border: 1px solid purple; */
 }
 
 div.hero-section-content {
 	display: grid;
-	/* grid-template-columns: 0.8fr 1fr 0.8fr; */
 	grid-auto-flow: column;
 	grid-auto-columns: 31%;
+
+	padding: 0 4rem 0 4rem;
 
 	overflow-x: auto;
 	overscroll-behavior-inline: contain;
 	scroll-snap-type: inline mandatory;
+	scroll-behavior: smooth;
 
 	height: 105%;
 	width: 100%;
 	border-radius: 0.25rem;
-}
-
-div.hero-section-content::-webkit-scrollbar {
-	display: none;
 }
 
 :root {
@@ -98,8 +94,8 @@ button.hero-section-controller-button {
 	z-index: 1000;
 	width: 5rem;
 	height: 1rem;
-	border-radius: .25rem;
-	
+	border-radius: 0.25rem;
+
 	border-top: var(--len) solid transparent;
 	border-bottom: var(--len) solid transparent;
 
@@ -155,9 +151,6 @@ div.hero-section-video {
 	display: flex;
 	justify-content: center;
 	height: 100%;
-
-	/* background-color: blueviolet; */
-	/* width: 100%; */
 }
 
 div.hero-section-video > video,
@@ -165,7 +158,6 @@ div.hero-section-video-main > video {
 	border-radius: 1rem;
 	box-shadow: 0 0 10px black;
 	width: 90%;
-	/* aspect-ratio: 16/9; */
 	object-fit: cover;
 	cursor: pointer;
 }
@@ -184,10 +176,8 @@ div.hero-section-video:hover > video {
 div.hero-section-video-main > video {
 	background-color: rgb(38, 33, 43);
 	height: 100%;
-	/* aspect-ratio: 16/9; */
-	/* object-fit: cover; */
 }
 
-/* div.hero-section-content::-webkit-scrollbar {
+div.hero-section-content::-webkit-scrollbar {
 	display: none;
-} */
+}

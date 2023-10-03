@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useRef } from "react";
 import "./HeroSection.css";
 import HeroSectionItem from "./components/HeroSectionItem";
 
@@ -9,13 +9,25 @@ export interface IHeroSection {
 }
 
 const HeroSection = ({ exampleProp }: IHeroSection) => {
+	const heroSectionRef = useRef<HTMLDivElement | null>(null);
+
+	const scrollByAmount = (amount: number) => {
+		if (heroSectionRef.current) {
+			heroSectionRef.current.scrollLeft += amount;
+		}
+	};
+
 	return (
 		<div className="HeroSection-container">
 			<div className="hero-section">
 				<div className="hero-section-content-container">
 					<div className="hero-section-content-container-controller left"></div>
-					<button className="hero-section-controller-button left"></button>
-					<div className="hero-section-content">
+					<button
+						className="hero-section-controller-button left"
+						onClick={() => scrollByAmount(-394)}
+					></button>
+					<div ref={heroSectionRef} className="hero-section-content">
+						<HeroSectionItem src={exampleProp} itemType="" />
 						<HeroSectionItem src={exampleProp} itemType="" />
 						<HeroSectionItem src={exampleProp} itemType="" />
 						<HeroSectionItem src={exampleProp} itemType="" />
@@ -24,7 +36,10 @@ const HeroSection = ({ exampleProp }: IHeroSection) => {
 						<HeroSectionItem src={exampleProp} itemType="" />
 					</div>
 					<div className="hero-section-content-container-controller right"></div>
-					<button className="hero-section-controller-button right"></button>
+					<button
+						className="hero-section-controller-button right"
+						onClick={() => scrollByAmount(394)}
+					></button>
 				</div>
 			</div>
 		</div>
