@@ -1,7 +1,7 @@
 .HeroSection-container {
 	display: flex;
 	position: relative;
-	min-height: 60vh;
+	min-height: 55vh;
 
 	justify-content: center;
 	align-items: center;
@@ -11,19 +11,20 @@ div.hero-section {
 	display: block;
 	position: relative;
 	height: 50vh;
-	padding: 2rem;
+	padding: 1rem;
 
-	width: 85%;
+	width: 95%;
 }
 
 div.hero-section-content-container {
 	display: flex;
 	position: relative;
 	height: 100%;
-	padding: 1rem;
+	padding: 0.5rem;
 	border-radius: 0.25rem;
-	background-color: rgba(59, 112, 212, 0.637);
-	box-shadow: 0 0 0.7rem black;
+
+	background-color: #25374d;
+	box-shadow: 0.5rem 0.5rem 0.7rem black;
 }
 
 div.hero-section-content {
@@ -100,9 +101,6 @@ button.hero-section-controller-button {
 	border-bottom: var(--len) solid transparent;
 
 	background-color: transparent;
-	color: none;
-	appearance: none;
-
 	opacity: 0.4;
 }
 

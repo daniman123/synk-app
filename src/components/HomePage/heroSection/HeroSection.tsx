@@ -2,44 +2,37 @@
 
 import { useRef } from "react";
 import "./HeroSection.css";
-import HeroSectionItem from "./components/HeroSectionItem";
+import { HeroSectionContent } from "./components/HeroSectionContent";
+import { HeroSectionController } from "./components/HeroSectionController";
+import React from "react";
 
 export interface IHeroSection {
 	exampleProp: string;
 }
 
 const HeroSection = ({ exampleProp }: IHeroSection) => {
-	const heroSectionRef = useRef<HTMLDivElement | null>(null);
-
-	const scrollByAmount = (amount: number) => {
-		if (heroSectionRef.current) {
-			heroSectionRef.current.scrollLeft += amount;
-		}
-	};
+	const heroSectionRef = useRef<HTMLDivElement>(null);
+	const MemoizedHeroSectionContent = React.memo(HeroSectionContent);
 
 	return (
 		<div className="HeroSection-container">
 			<div className="hero-section">
 				<div className="hero-section-content-container">
-					<div className="hero-section-content-container-controller left"></div>
-					<button
-						className="hero-section-controller-button left"
-						onClick={() => scrollByAmount(-394)}
-					></button>
-					<div ref={heroSectionRef} className="hero-section-content">
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-						<HeroSectionItem src={exampleProp} itemType="" />
-					</div>
-					<div className="hero-section-content-container-controller right"></div>
-					<button
-						className="hero-section-controller-button right"
-						onClick={() => scrollByAmount(394)}
-					></button>
+					<HeroSectionController
+						amount={-394}
+						scrollAbleElementRef={heroSectionRef}
+						scrollDirection="left"
+					/>
+					<MemoizedHeroSectionContent
+						heroSectionRef={heroSectionRef}
+						src={exampleProp}
+					/>
+
+					<HeroSectionController
+						amount={394}
+						scrollAbleElementRef={heroSectionRef}
+						scrollDirection="right"
+					/>
 				</div>
 			</div>
 		</div>
