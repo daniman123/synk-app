@@ -8,3 +8,8 @@ export interface IHeroSectionController {
 	amount: number;
 	scrollDirection: string;
 }
+
+interface IHeroSectionButtonProps {
+	onClick: () => void;
+	direction: string;
+}

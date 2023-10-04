@@ -1,8 +1,11 @@
 import { scrollByAmount } from "../helpers";
-import { IHeroSectionController } from "../types";
+import { IHeroSectionButtonProps, IHeroSectionController } from "../types";
 import { useCallback } from "react";
 
-export const HeroSectionButton = ({ onClick, direction }: any) => {
+export const HeroSectionButton = ({
+	onClick,
+	direction,
+}: IHeroSectionButtonProps) => {
 	return (
 		<button
 			className={`hero-section-controller-button ${direction}`}
@@ -26,7 +29,7 @@ export const HeroSectionController = ({
 				className={`hero-section-content-container-controller ${scrollDirection}`}
 			></div>
 			<HeroSectionButton
-				onClick={scrollByAmountMemoized} // Use the memoized function
+				onClick={scrollByAmountMemoized}
 				direction={scrollDirection}
 			/>
 		</>

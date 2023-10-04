@@ -27,7 +27,6 @@ const HeroSection = ({ exampleProp }: IHeroSection) => {
 						heroSectionRef={heroSectionRef}
 						src={exampleProp}
 					/>
-
 					<HeroSectionController
 						amount={394}
 						scrollAbleElementRef={heroSectionRef}
