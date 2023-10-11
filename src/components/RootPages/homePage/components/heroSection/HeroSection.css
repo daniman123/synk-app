@@ -1,7 +1,7 @@
 .HeroSection-container {
 	display: flex;
 	position: relative;
-	min-height: 55vh;
+	min-height: 45vh;
 
 	justify-content: center;
 	align-items: center;
@@ -10,7 +10,7 @@
 div.hero-section {
 	display: block;
 	position: relative;
-	height: 50vh;
+	height: 45vh;
 	padding: 1rem;
 
 	width: 95%;

@@ -1,12 +1,9 @@
-import HeroSection from "@/components/HomePage/heroSection/HeroSection";
-import { mockHeroSectionProps } from "@/components/HomePage/heroSection/HeroSection.mocks";
-import Trending from "@/components/HomePage/trending/Trending";
+import HomePage from "@/components/RootPages/homePage/HomePage";
 
 const Home = (): JSX.Element => {
 	return (
 		<main className="content-main">
-			<HeroSection exampleProp={mockHeroSectionProps.base.exampleProp} />
-			<Trending exampleProp="Trending" />
+			<HomePage />
 		</main>
 	);
 };

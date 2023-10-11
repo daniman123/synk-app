@@ -1,0 +1,19 @@
+.DiscoverPage-container {
+}
+
+div.video-preview-grid-container-wrapper.Discover {
+	min-height: 35vh;
+	margin-bottom: 3rem;
+}
+
+div.video-preview-grid-container-wrapper.Top {
+	min-height: 35vh;
+	margin-bottom: 3rem;
+
+}
+
+div.video-preview-grid-container-wrapper.You.Might.Like {
+	min-height: 35vh;
+	margin-bottom: 3rem;
+
+}
