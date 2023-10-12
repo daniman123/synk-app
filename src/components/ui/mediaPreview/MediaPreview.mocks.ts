@@ -4,15 +4,15 @@ import {
 } from "./components/MediaPreviewItem";
 import withCustomMediaPreviewItem from "./components/RenderMediaPreviews";
 import { IMediaPreview } from "./types";
-import { imageUrls } from "@/components/RootPages/homePage/components/trending/Trending.mocks";
+import mockMediaPreviewsProps from "../../../../mockDataJson/MEDIA_PREVIEWS_MOCK_DATA.json";
 
-const RenderMediaPreviews = withCustomMediaPreviewItem(VideoPreviewItem);
+const RenderMediaPreviews = withCustomMediaPreviewItem(PeeksPreviewItem);
 
 const base: IMediaPreview = {
-	gridName: "video",
-	gridType: "video",
+	gridName: "Peeks",
+	gridType: "Peeks",
 	MediaGrid: RenderMediaPreviews,
-	previewItemsArrayData: imageUrls,
+	previewItemsArrayData: mockMediaPreviewsProps,
 };
 
 export const mockMediaPreviewProps = {

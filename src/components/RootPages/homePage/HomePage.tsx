@@ -1,19 +1,35 @@
 import HeroSection from "./components/heroSection/HeroSection";
 import { mockHeroSectionProps } from "./components/heroSection/HeroSection.mocks";
-import Trending from "./components/trending/Trending";
-import { mockTrendingProps } from "./components/trending/Trending.mocks";
 import "./HomePage.css";
-import HomePeeks from "./components/homePeeks/HomePeeks";
+import withCustomMediaPreviewItem from "@/components/ui/mediaPreview/components/RenderMediaPreviews";
+import {
+	PeeksPreviewItem,
+	VideoPreviewItem,
+} from "@/components/ui/mediaPreview/components/MediaPreviewItem";
+import MediaPreview from "@/components/ui/mediaPreview/MediaPreview";
+import mockMediaPreviewsProps from "../../../../mockDataJson/MEDIA_PREVIEWS_MOCK_DATA.json";
 
 export interface IHomePage {}
+const RenderVideoPreviews = withCustomMediaPreviewItem(VideoPreviewItem);
+const RenderPeeksPreviews = withCustomMediaPreviewItem(PeeksPreviewItem);
 
 const HomePage = () => {
 	return (
 		<main className="content-main">
 			<HeroSection exampleProp={mockHeroSectionProps.base.exampleProp} />
-			<Trending trendingItems={mockTrendingProps.base.trendingItems} />
-			<HomePeeks
-				trendingItems={mockTrendingProps.base.trendingItems.slice(4)}
+
+			<MediaPreview
+				MediaGrid={RenderVideoPreviews}
+				gridName="Trending"
+				gridType="video"
+				previewItemsArrayData={mockMediaPreviewsProps}
+			/>
+
+			<MediaPreview
+				MediaGrid={RenderPeeksPreviews}
+				gridName="Peeks"
+				gridType="peeks"
+				previewItemsArrayData={mockMediaPreviewsProps.slice(4)}
 			/>
 		</main>
 	);

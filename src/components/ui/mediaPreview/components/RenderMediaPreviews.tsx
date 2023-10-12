@@ -11,9 +11,9 @@ const withCustomMediaPreviewItem = (
 	}: IRenderMediaPreviews) {
 		return (
 			<>
-				{previewItemsArrayData.map((previewItemData) => (
+				{previewItemsArrayData.map((previewItemData, index) => (
 					<WrappedComponent
-						key={previewItemData.id}
+						key={previewItemData + index}
 						{...previewItemData}
 						gridName={gridName}
 						gridType={gridType}
