@@ -1,31 +1,73 @@
 import React from "react";
-import { IPeeksPreviewItem, IVideoPreviewItem } from "../types";
+import {
+	IClipsPreviewItem,
+	IPeeksPreviewItem,
+	IVideoPreviewItem,
+} from "../types";
 import MediaPreviewImage from "./MediaPreviewImage";
-import VideoPreviewMetaData from "./VideoPreviewMetaData";
-import PeeksPreviewMetaData from "./PeeksPreviewMetaData";
+import VideoPreviewMetaData from "./features/VideoPreviewMetaData";
+import PeeksPreviewMetaData from "./features/PeeksPreviewMetaData";
+import ClipsPreviewMetaData from "./features/ClipsPreviewMetaData";
 
-export const VideoPreviewItem = (previewItemData: IVideoPreviewItem) => {
+const VideoPreview = ({
+	imagePreview,
+	gridName,
+	gridType,
+	...rest
+}: IVideoPreviewItem) => {
 	return (
-		<div>
+		<div className="video-preview-content-item cursor-pointer">
 			<MediaPreviewImage
-				imagePreview={previewItemData.imagePreview}
-				gridName={previewItemData.gridName}
-				gridType={previewItemData.gridType}
+				imagePreview={imagePreview}
+				gridName={gridName}
+				gridType={gridType}
 			/>
-			<VideoPreviewMetaData {...previewItemData} />
+			<VideoPreviewMetaData {...rest} />
 		</div>
 	);
 };
 
-export const PeeksPreviewItem = (previewItemData: IPeeksPreviewItem) => {
+const ClipsPreview = ({
+	imagePreview,
+	gridName,
+	gridType,
+	...rest
+}: IClipsPreviewItem) => {
 	return (
-		<div>
+		<div className="video-preview-content-item cursor-pointer">
 			<MediaPreviewImage
-				imagePreview={previewItemData.imagePreview}
-				gridName={previewItemData.gridName}
-				gridType={previewItemData.gridType}
+				imagePreview={imagePreview}
+				gridName={gridName}
+				gridType={gridType}
 			/>
-			<PeeksPreviewMetaData {...previewItemData} />
+			<ClipsPreviewMetaData {...rest} />
 		</div>
 	);
 };
+
+const PeeksPreview = ({
+	imagePreview,
+	gridName,
+	gridType,
+	...rest
+}: IPeeksPreviewItem) => {
+	return (
+		<div className="peeks-preview-content-item cursor-pointer">
+			<MediaPreviewImage
+				imagePreview={imagePreview}
+				gridName={gridName}
+				gridType={gridType}
+			/>
+			<PeeksPreviewMetaData {...rest} />
+		</div>
+	);
+};
+
+export const ClipsPreviewItem = React.memo(ClipsPreview);
+ClipsPreview.displayName = "ClipsPreviewItem";
+
+export const VideoPreviewItem = React.memo(VideoPreview);
+VideoPreviewItem.displayName = "VideoPreviewItem";
+
+export const PeeksPreviewItem = React.memo(PeeksPreview);
+PeeksPreviewItem.displayName = "PeeksPreviewItem";

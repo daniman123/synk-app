@@ -10,6 +10,7 @@ const MediaPreviewImage = ({
 	return (
 		<div className={`${gridType}-preview-item-preview ${gridName}`}>
 			<Image
+			className="cursor-pointer"
 				src={imagePreview as string}
 				alt=""
 				width={0}

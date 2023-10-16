@@ -8,7 +8,7 @@ const MediaPreview = ({
 	previewItemsArrayData,
 }: IMediaPreview) => {
 	return (
-		<div className={`${gridType}-preview-grid-container-wrapper ${gridName}`}>
+		<div className={`${gridType}-preview-grid-container-wrapper ${gridName} flex-center`}>
 			<div className={`${gridType}-preview-grid-container ${gridName}`}>
 				<div className={`${gridType}-preview-grid ${gridName}`}>
 					<MediaGrid

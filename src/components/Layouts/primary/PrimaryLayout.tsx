@@ -8,7 +8,7 @@ export interface PrimaryLayoutProps {
 
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
-		<section>
+		<section className="primary-layout">
 			<NavBar />
 			<SecondaryLayout>{children}</SecondaryLayout>
 		</section>

@@ -1,0 +1,15 @@
+.ViewerPage-container {
+	min-height: 100%;
+	display: grid;
+
+	grid-template-columns: 1280px calc(1640px - 1280px);
+	grid-template-rows: repeat(5, 1fr);
+}
+div.viewer-page-broadcast-meta-data {
+	display: grid;
+	grid-template-rows: 720px calc(880px - 720px);
+}
+
+div.media-player-container > video {
+	object-fit: cover;
+}

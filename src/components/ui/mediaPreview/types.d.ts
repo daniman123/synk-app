@@ -27,3 +27,28 @@ export interface IVideoPreviewItem extends IPeeksPreviewItem {
 	username: string;
 	category: string;
 }
+
+export interface IClipsPreviewItem extends IPeeksPreviewItem {
+	username: string;
+}
+
+export interface IStreamPreviewItemData {
+	imagePreview: string;
+	username: string;
+	title: string;
+	category: string;
+	viewerCount: string;
+}
+
+export interface IPeeksPreviewItemData {
+	imagePreview: string;
+	title: string;
+	viewerCount: string;
+}
+
+export interface IClipsPreviewItemData {
+	imagePreview: string;
+	username: string;
+	title: string;
+	viewerCount: string;
+}

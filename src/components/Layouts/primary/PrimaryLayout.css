@@ -19,6 +19,10 @@ body {
 	font-family: "Inter latin", sans-serif;
 }
 
+main.content-main {
+	height: 100%;
+}
+
 main.auth-main {
 	display: block;
 	position: fixed;
@@ -26,6 +30,10 @@ main.auth-main {
 	height: 100vh;
 	left: 0;
 	backdrop-filter: blur(2px) brightness(65%);
+}
+
+section.content-feed {
+	margin-left: 280px;
 }
 
 button.primary {
@@ -46,4 +54,32 @@ button.primary {
 
 button.primary:hover {
 	opacity: 1;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.ellipsis-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-col-span-2 {
+	grid-column: span 2;
+}
+
+.grid-row-span-2 {
+	grid-row: span 2;
+}
+
+.grid-row-span-5 {
+	grid-row: span 5;
 }

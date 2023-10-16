@@ -1,18 +1,18 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import "./HeroSection.css";
 import { HeroSectionContent } from "./components/HeroSectionContent";
 import { HeroSectionController } from "./components/HeroSectionController";
-import React from "react";
 
 export interface IHeroSection {
-	exampleProp: string;
+	src: string;
 }
 
-const HeroSection = ({ exampleProp }: IHeroSection) => {
+const MemoizedHeroSectionContent = React.memo(HeroSectionContent);
+
+const HeroSection = ({ src }: IHeroSection) => {
 	const heroSectionRef = useRef<HTMLDivElement>(null);
-	const MemoizedHeroSectionContent = React.memo(HeroSectionContent);
 
 	return (
 		<div className="HeroSection-container">
@@ -25,7 +25,7 @@ const HeroSection = ({ exampleProp }: IHeroSection) => {
 					/>
 					<MemoizedHeroSectionContent
 						heroSectionRef={heroSectionRef}
-						src={exampleProp}
+						src={src}
 					/>
 					<HeroSectionController
 						amount={394}

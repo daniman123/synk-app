@@ -1,24 +1,26 @@
 .SecondaryLayout-container {
-	display: flex;
 	margin-top: 51px;
+	display: flex;
+	gap: 0.5rem;
+	height: calc(100vh - 51px);
 }
 
-div[datatype="SideBar-container collapsed"] + section.content-feed {
+section.content-feed {
+	min-height: 100%;
+	width: 100%;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.281);
+}
+
+div.SideBar-container.collapsed + section.content-feed {
 	display: block;
 	position: relative;
 	left: 3%;
 	width: calc(96% - 2rem);
 }
 
-div[datatype="SideBar-container expanded"] + section.content-feed {
-	display: block;
-	position: relative;
-	left: 14%;
-	width: calc(85% - 2rem);
-}
-
-section.content-feed {
-	min-height: calc(100vh - 51px);
-	margin-left: 2rem;
-	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.281);
+div.SideBar-container.expanded + section.content-feed {
+	/* display: flex; */
+	/* position: relative; */
+	/* left: 14%; */
+	/* width: calc(85% - 2rem); */
 }
