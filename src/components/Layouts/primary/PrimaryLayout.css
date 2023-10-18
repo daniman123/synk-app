@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -54,6 +58,11 @@ button.primary {
 
 button.primary:hover {
 	opacity: 1;
+}
+
+button.clear {
+	border: 0;
+	background-color: transparent;
 }
 
 .cursor-pointer {

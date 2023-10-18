@@ -10,6 +10,56 @@ div.viewer-page-broadcast-meta-data {
 	grid-template-rows: 720px calc(880px - 720px);
 }
 
-div.media-player-container > video {
+/* MEDIA PLAYER */
+div.media-player-container {
+	position: relative;
+}
+div.media-player-container > video.media-player {
 	object-fit: cover;
+}
+
+div.media-player-controls-container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: white;
+	z-index: 100;
+
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+}
+
+div.media-player-container:hover div.media-player-controls-container {
+	opacity: 1;
+}
+
+div.media-player-controls-container::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	background: linear-gradient(to top, rgb(0, 0, 0, 0.75), transparent);
+	width: 100%;
+	aspect-ratio: 6/1;
+	z-index: -1;
+	pointer-events: none;
+}
+
+div.media-player-controls {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.3rem;
+}
+
+div.media-player-controls.left {
+	display: flex;
+	gap: 0.8rem;
+}
+
+button.media-player-button {
+	opacity: 0.85;
+}
+
+button.media-player-button:hover {
+	opacity: 1;
 }

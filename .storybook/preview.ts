@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
 import "../src/components/Layouts/primary/PrimaryLayout.css";
 
+// import '../src/tailwind.css';
+
 const preview: Preview = {
 	parameters: {
 		actions: { argTypesRegex: "^on[A-Z].*" },
