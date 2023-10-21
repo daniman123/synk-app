@@ -8,20 +8,22 @@ const ViewerPage = () => {
 	return (
 		<div
 			className="grid grid-rows-5"
-			style={{ gridTemplateColumns: "1280px calc(1640px - 1280px)" }}
+			style={{
+				gridTemplateColumns: "1280px calc(1640px - 1280px)",
+			}}
 		>
 			<div
-				className="grid col-span-1 row-span-full"
+				className="grid col-span-1 row-span-full w-[1280px]"
 				style={{
-					width: "1280px",
-					gridTemplateRows: "720px 808px",
-					// gridTemplateRows: "720px calc(880px - 720px)",
+					gridTemplateRows: "720px 880px",
 				}}
 			>
 				<MediaPlayer />
-				<MediaPlayerBanner />
+				<div>
+					<MediaPlayerBanner />
+				</div>
 			</div>
-			<div className="col-span-1 sticky" style={{ top: "51px" }}>
+			<div className="col-span-1 sticky top-[51px]">
 				<ViewerChat />
 			</div>
 		</div>

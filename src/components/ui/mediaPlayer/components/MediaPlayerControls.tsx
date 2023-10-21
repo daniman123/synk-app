@@ -1,7 +1,9 @@
-import playButtonImg from "@/assets/playButton.svg";
-import pauseButtonImg from "@/assets/pauseButton.svg";
-import fullScreen from "@/assets/fullScreen.svg";
-import volumeImg from "@/assets/volume.svg";
+import playButtonImg from "@/assets/mediaControlAssets/playback/playButton.svg";
+import pauseButtonImg from "@/assets/mediaControlAssets/playback/pauseButton.svg";
+import fullScreen from "@/assets/mediaControlAssets/screenSize/fullScreen.svg";
+import volumeHighImg from "@/assets/mediaControlAssets/volume/volumeHigh.svg";
+import volumeLowImg from "@/assets/mediaControlAssets/volume/volumeLow.svg";
+import volumeMuteImg from "@/assets/mediaControlAssets/volume/volumeMute.svg";
 import Image from "next/image";
 import Button from "../../button/Button";
 import { onFullScreen, onMute, onPlay } from "../mediaControlsUtils";
@@ -20,7 +22,8 @@ const MediaControlButton = ({
 );
 
 const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
-	const { isPlaying, setIsPlaying } = useVideoPlayState(mediaVideoRef);
+	const { isPlaying, setIsPlaying, volume, setVolume, mute } =
+		useVideoPlayState(mediaVideoRef);
 
 	return (
 		<div
@@ -39,9 +42,27 @@ const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 						onClick={() => onPlay(mediaVideoRef.current, setIsPlaying)}
 					/>
 					<MediaControlButton
-						icon={volumeImg}
+						icon={
+							mute || volume == 0
+								? volumeMuteImg
+								: volume && volume >= 0.5
+								? volumeHighImg
+								: volumeLowImg
+						}
 						altText="Volume"
 						onClick={() => onMute(mediaVideoRef.current)}
+					/>
+					<input
+						type="range"
+						name="volume"
+						id="mediaVolume"
+						min={0}
+						max={1}
+						step="any"
+						value={mute ? 0 : volume}
+						onChange={(e) => {
+							setVolume(parseFloat(e.target.value));
+						}}
 					/>
 				</MediaControlsSegment>
 				<MediaControlsSegment>

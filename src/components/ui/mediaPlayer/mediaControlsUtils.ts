@@ -19,7 +19,9 @@ const onFullScreen = async (mediaVideoRef: HTMLVideoElement | undefined) => {
 };
 
 const onMute = (mediaVideoRef: HTMLVideoElement | undefined) => {
-	mediaVideoRef?.volume;
+	if (mediaVideoRef) {
+		mediaVideoRef.muted = !mediaVideoRef.muted;
+	}
 };
 
 export { onPlay, onFullScreen, onMute };

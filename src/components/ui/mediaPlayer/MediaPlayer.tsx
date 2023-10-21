@@ -14,7 +14,7 @@ const MediaPlayer = () => {
 				src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 				id="media-player"
 				className="object-cover bg-white w-full"
-				muted
+				
 				autoPlay
 			/>
 		</div>
