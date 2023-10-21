@@ -14,6 +14,7 @@ export const ExpandedRecommendedList = ({
 				<PopulatedChannelsList
 					channels={recommendedChannels}
 					channelListTitle="RECOMMENDED CHANNELS"
+					defaultDisplay={3}
 				/>
 			) : (
 				<EmptyChannelsList />

@@ -10,6 +10,7 @@ export interface ChannelListElement {
 export interface ChannelsList {
 	channels: ChannelListElement[];
 	channelListTitle: string;
+	defaultDisplay: number;
 }
 
 export interface FollowedChannelsList {

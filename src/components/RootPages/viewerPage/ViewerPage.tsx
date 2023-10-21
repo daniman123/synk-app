@@ -1,5 +1,5 @@
-import MediaPlayer from "./components/MediaPlayer";
-import MediaPlayerBanner from "./components/MediaPlayerBanner";
+import MediaPlayer from "../../ui/mediaPlayer/MediaPlayer";
+import MediaPlayerBanner from "../../ui/mediaPlayer/components/MediaPlayerBanner";
 import ViewerChat from "./components/ViewerChat";
 
 export interface IViewerPage {}

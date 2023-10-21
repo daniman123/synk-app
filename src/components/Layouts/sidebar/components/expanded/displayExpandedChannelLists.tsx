@@ -44,8 +44,9 @@ export const ListElement = ({
 export const PopulatedChannelsList = ({
 	channels,
 	channelListTitle,
+	defaultDisplay,
 }: ChannelsList): JSX.Element => {
-	const [listLength, setListLength] = useState(6);
+	const [listLength, setListLength] = useState(defaultDisplay);
 	const [channelsDisplay, setChannelsDisplay] = useState(channels);
 
 	useEffect(() => {
@@ -72,17 +73,21 @@ export const PopulatedChannelsList = ({
 				);
 			})}
 			<div className="show-n-channel-togglers">
-				{listLength > 6 ? (
+				{listLength > defaultDisplay ? (
 					<div
 						className="show-less-channel-list"
-						onClick={() => setListLength((prevLen) => (prevLen -= 6))}
+						onClick={() =>
+							setListLength((prevLen) => (prevLen -= defaultDisplay))
+						}
 					>
 						show less
 					</div>
 				) : null}
 				<div
 					className="show-more-channel-list"
-					onClick={() => setListLength((prevLen) => (prevLen += 6))}
+					onClick={() =>
+						setListLength((prevLen) => (prevLen += defaultDisplay))
+					}
 				>
 					show more
 				</div>

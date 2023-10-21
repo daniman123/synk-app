@@ -14,6 +14,7 @@ export const ExpandedFollowedList = ({
 				<PopulatedChannelsList
 					channels={followedChannels}
 					channelListTitle="FOLLOWING CHANNELS"
+					defaultDisplay={7}
 				/>
 			) : (
 				<EmptyChannelsList />
