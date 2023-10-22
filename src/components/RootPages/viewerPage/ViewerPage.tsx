@@ -1,8 +1,8 @@
 import MediaPlayer from "../../ui/mediaPlayer/MediaPlayer";
 import MediaPlayerBanner from "../../ui/mediaPlayer/components/MediaPlayerBanner";
-import ViewerChat from "./components/ViewerChat";
+import ViewerChat from "../../ui/viewerChat/ViewerChat";
 
-export interface IViewerPage {}
+
 
 const ViewerPage = () => {
 	return (

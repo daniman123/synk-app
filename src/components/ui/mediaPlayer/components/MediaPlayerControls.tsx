@@ -10,10 +10,54 @@ import MediaControlsSegment from "./MediaControlsSegment";
 import { useVideoPlayState } from "../hooks";
 import { VolumeControl } from "./VolumeControl";
 import { MediaControlButton } from "./MediaControlButton";
+import { Dispatch, MutableRefObject, SetStateAction } from "react";
+
+export interface IMediaControlsSegments {
+	isPlaying: boolean;
+	setIsPlaying: Dispatch<SetStateAction<boolean>>;
+	mute: boolean | undefined;
+	setVolume: Dispatch<SetStateAction<number | undefined>>;
+	volume: number | undefined;
+}
+
+export interface IplayState {
+	playState: IMediaControlsSegments;
+	mediaVideoRef: MutableRefObject<HTMLVideoElement>;
+}
+export const MediaControlsSegments = ({
+	playState: { isPlaying, mute, setIsPlaying, setVolume, volume },
+	mediaVideoRef,
+}: IplayState) => {
+	return (
+		<>
+			<MediaControlsSegment>
+				<MediaControlButton
+					icon={isPlaying ? pauseButtonImg : playButtonImg}
+					altText="Play/Pause"
+					onClick={() =>
+						handleMediaPlayback(mediaVideoRef.current, setIsPlaying)
+					}
+				/>
+				<VolumeControl
+					mediaVideoRef={mediaVideoRef}
+					mute={mute}
+					setVolume={setVolume}
+					volume={volume}
+				/>
+			</MediaControlsSegment>
+			<MediaControlsSegment>
+				<MediaControlButton
+					icon={fullScreen}
+					altText="Full Screen"
+					onClick={() => handleMediaFullscreen(mediaVideoRef.current)}
+				/>
+			</MediaControlsSegment>
+		</>
+	);
+};
 
 const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
-	const { isPlaying, setIsPlaying, volume, setVolume, mute } =
-		useVideoPlayState(mediaVideoRef);
+	const playState = useVideoPlayState(mediaVideoRef);
 
 	return (
 		<div
@@ -25,30 +69,10 @@ const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 				id="media-player-controls"
 				className="flex justify-between px-5 pb-2 z-10"
 			>
-				<MediaControlsSegment>
-					<MediaControlButton
-						icon={isPlaying ? pauseButtonImg : playButtonImg}
-						altText="Play/Pause"
-						onClick={() =>
-							handleMediaPlayback(mediaVideoRef.current, setIsPlaying)
-						}
-					/>
-					<VolumeControl
-						mediaVideoRef={mediaVideoRef}
-						mute={mute}
-						setVolume={setVolume}
-						volume={volume}
-					/>
-				</MediaControlsSegment>
-				<MediaControlsSegment>
-					<MediaControlButton
-						icon={fullScreen}
-						altText="Full Screen"
-						onClick={() =>
-							handleMediaFullscreen(mediaVideoRef.current)
-						}
-					/>
-				</MediaControlsSegment>
+				<MediaControlsSegments
+					playState={playState}
+					mediaVideoRef={mediaVideoRef}
+				/>
 			</div>
 		</div>
 	);

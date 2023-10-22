@@ -16,11 +16,5 @@ div.SideBar-container.collapsed + section.content-feed {
 	position: relative;
 	left: 3%;
 	width: calc(96% - 2rem);
-}
-
-div.SideBar-container.expanded + section.content-feed {
-	/* display: flex; */
-	/* position: relative; */
-	/* left: 14%; */
-	/* width: calc(85% - 2rem); */
+	margin-left: 0;
 }
