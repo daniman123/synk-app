@@ -14,7 +14,7 @@ const MediaPlayer = () => {
 				id="media-player"
 				className="object-cover bg-white w-full"
 				controls={false}
-				// muted
+				muted
 				// autoPlay
 			/>
 		</div>

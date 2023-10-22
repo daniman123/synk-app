@@ -2,7 +2,6 @@ import { MutableRefObject, useEffect } from "react";
 import {
 	addEventListeners,
 	bundleEventHandlers,
-	handleMute,
 	removeEventListeners,
 	useVideoStates,
 } from "./mediaControlsUtils";
@@ -39,7 +38,7 @@ export const useVolumeHook = (
 		if (video) {
 			video.volume = volume as number;
 			if (video.volume !== 0 || video.muted) {
-				handleMute(video);
+				video.muted = false;
 			}
 		}
 	}, [mediaVideoRef, volume]);

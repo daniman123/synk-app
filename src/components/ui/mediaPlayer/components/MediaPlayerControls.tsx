@@ -44,7 +44,9 @@ const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 					<MediaControlButton
 						icon={fullScreen}
 						altText="Full Screen"
-						onClick={() => handleMediaFullscreen(mediaVideoRef.current)}
+						onClick={() =>
+							handleMediaFullscreen(mediaVideoRef.current)
+						}
 					/>
 				</MediaControlsSegment>
 			</div>
