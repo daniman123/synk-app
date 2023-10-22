@@ -1,25 +1,15 @@
 import playButtonImg from "@/assets/mediaControlAssets/playback/playButton.svg";
 import pauseButtonImg from "@/assets/mediaControlAssets/playback/pauseButton.svg";
 import fullScreen from "@/assets/mediaControlAssets/screenSize/fullScreen.svg";
-import volumeHighImg from "@/assets/mediaControlAssets/volume/volumeHigh.svg";
-import volumeLowImg from "@/assets/mediaControlAssets/volume/volumeLow.svg";
-import volumeMuteImg from "@/assets/mediaControlAssets/volume/volumeMute.svg";
-import Image from "next/image";
-import Button from "../../button/Button";
-import { onFullScreen, onMute, onPlay } from "../mediaControlsUtils";
-import { IMediaControlButton, IMediaPlayerControls } from "../types";
+import {
+	handleMediaFullscreen,
+	handleMediaPlayback,
+} from "../mediaControlsUtils";
+import { IMediaPlayerControls } from "../types";
 import MediaControlsSegment from "./MediaControlsSegment";
 import { useVideoPlayState } from "../hooks";
-
-const MediaControlButton = ({
-	icon,
-	altText,
-	onClick,
-}: IMediaControlButton) => (
-	<Button buttonClickFn={onClick}>
-		<Image src={icon} alt={altText} />
-	</Button>
-);
+import { VolumeControl } from "./VolumeControl";
+import { MediaControlButton } from "./MediaControlButton";
 
 const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 	const { isPlaying, setIsPlaying, volume, setVolume, mute } =
@@ -39,37 +29,22 @@ const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 					<MediaControlButton
 						icon={isPlaying ? pauseButtonImg : playButtonImg}
 						altText="Play/Pause"
-						onClick={() => onPlay(mediaVideoRef.current, setIsPlaying)}
-					/>
-					<MediaControlButton
-						icon={
-							mute || volume == 0
-								? volumeMuteImg
-								: volume && volume >= 0.5
-								? volumeHighImg
-								: volumeLowImg
+						onClick={() =>
+							handleMediaPlayback(mediaVideoRef.current, setIsPlaying)
 						}
-						altText="Volume"
-						onClick={() => onMute(mediaVideoRef.current)}
 					/>
-					<input
-						type="range"
-						name="volume"
-						id="mediaVolume"
-						min={0}
-						max={1}
-						step="any"
-						value={mute ? 0 : volume}
-						onChange={(e) => {
-							setVolume(parseFloat(e.target.value));
-						}}
+					<VolumeControl
+						mediaVideoRef={mediaVideoRef}
+						mute={mute}
+						setVolume={setVolume}
+						volume={volume}
 					/>
 				</MediaControlsSegment>
 				<MediaControlsSegment>
 					<MediaControlButton
 						icon={fullScreen}
 						altText="Full Screen"
-						onClick={() => onFullScreen(mediaVideoRef.current)}
+						onClick={() => handleMediaFullscreen(mediaVideoRef.current)}
 					/>
 				</MediaControlsSegment>
 			</div>

@@ -5,7 +5,6 @@ import MediaPlayerControls from "./components/MediaPlayerControls";
 
 const MediaPlayer = () => {
 	const mediaVideoRef = useRef<HTMLVideoElement>(null);
-
 	return (
 		<div id="media-player-container" className="relative group">
 			<MediaPlayerControls mediaVideoRef={mediaVideoRef} />
@@ -14,8 +13,9 @@ const MediaPlayer = () => {
 				src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 				id="media-player"
 				className="object-cover bg-white w-full"
-				
-				autoPlay
+				controls={false}
+				// muted
+				// autoPlay
 			/>
 		</div>
 	);

@@ -1,45 +1,59 @@
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject, useEffect } from "react";
+import {
+	addEventListeners,
+	bundleEventHandlers,
+	handleMute,
+	removeEventListeners,
+	useVideoStates,
+} from "./mediaControlsUtils";
+
+const useVideoEventListeners = (
+	mediaVideoRef: MutableRefObject<HTMLVideoElement | undefined>,
+	setIsPlaying: any,
+	setVolume: any,
+	setMute: any
+) => {
+	useEffect(() => {
+		const video = mediaVideoRef.current;
+		if (!video) return;
+
+		const handlers = bundleEventHandlers(
+			video,
+			setVolume,
+			setMute,
+			setIsPlaying
+		);
+
+		addEventListeners(video, handlers);
+
+		return () => removeEventListeners(video, handlers);
+	}, [mediaVideoRef, setIsPlaying, setVolume, setMute]);
+};
+
+export const useVolumeHook = (
+	mediaVideoRef: MutableRefObject<HTMLVideoElement | undefined>,
+	volume: number | undefined
+) => {
+	useEffect(() => {
+		const video = mediaVideoRef.current;
+		if (video) {
+			video.volume = volume as number;
+			if (video.volume !== 0 || video.muted) {
+				handleMute(video);
+			}
+		}
+	}, [mediaVideoRef, volume]);
+};
 
 export const useVideoPlayState = (
 	mediaVideoRef: MutableRefObject<HTMLVideoElement | undefined>
 ) => {
-	const [isPlaying, setIsPlaying] = useState(false);
-	const [volume, setVolume] = useState<number | undefined>(1);
-	const [mute, setMute] = useState<boolean | undefined>(false);
-	// const [isFullScreen, setisFullScreen] = useState(false);
+	const { isPlaying, setIsPlaying, volume, setVolume, mute, setMute } =
+		useVideoStates();
 
-	useEffect(() => {
-		const video = mediaVideoRef.current as HTMLVideoElement;
-		video.onplaying = () => {
-			mediaVideoRef.current?.paused ? setIsPlaying(false) : setIsPlaying(true);
-			setVolume(video.volume);
-			setMute(video.muted);
-		};
+	useVideoEventListeners(mediaVideoRef, setIsPlaying, setVolume, setMute);
 
-		video.onvolumechange = () => {
-			let currentVolume = video.volume;
-			setVolume(currentVolume);
-			if (currentVolume == 0 || video.muted) {
-				setMute(true);
-			} else {
-				setMute(false);
-			}
-		};
-
-		return () => {
-			video.onplaying = null;
-			video.onvolumechange = null;
-		};
-	}, [mediaVideoRef]);
-
-	useEffect(() => {
-		const video = mediaVideoRef.current as HTMLVideoElement;
-		video.volume = volume as number;
-		if (video.volume != 0 || video.muted) {
-			video.muted = false;
-			setMute(false);
-		}
-	}, [mediaVideoRef, volume]);
+	useVolumeHook(mediaVideoRef, volume);
 
 	return { isPlaying, setIsPlaying, volume, setVolume, mute, setMute };
 };
