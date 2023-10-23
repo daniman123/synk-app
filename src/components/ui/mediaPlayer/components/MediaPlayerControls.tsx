@@ -5,25 +5,12 @@ import {
 	handleMediaFullscreen,
 	handleMediaPlayback,
 } from "../mediaControlsUtils";
-import { IMediaPlayerControls } from "../types";
+import { IMediaPlayerControls, IplayState } from "../types";
 import MediaControlsSegment from "./MediaControlsSegment";
 import { useVideoPlayState } from "../hooks";
 import { VolumeControl } from "./VolumeControl";
 import { MediaControlButton } from "./MediaControlButton";
-import { Dispatch, MutableRefObject, SetStateAction } from "react";
 
-export interface IMediaControlsSegments {
-	isPlaying: boolean;
-	setIsPlaying: Dispatch<SetStateAction<boolean>>;
-	mute: boolean | undefined;
-	setVolume: Dispatch<SetStateAction<number | undefined>>;
-	volume: number | undefined;
-}
-
-export interface IplayState {
-	playState: IMediaControlsSegments;
-	mediaVideoRef: MutableRefObject<HTMLVideoElement>;
-}
 export const MediaControlsSegments = ({
 	playState: { isPlaying, mute, setIsPlaying, setVolume, volume },
 	mediaVideoRef,

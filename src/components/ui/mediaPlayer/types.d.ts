@@ -18,3 +18,16 @@ export interface IVolumeControl {
 	mute: boolean | undefined;
 	mediaVideoRef: MutableRefObject<HTMLVideoElement | undefined>;
 }
+
+export interface IMediaControlsSegments {
+	isPlaying: boolean;
+	setIsPlaying: Dispatch<SetStateAction<boolean>>;
+	mute: boolean | undefined;
+	setVolume: Dispatch<SetStateAction<number | undefined>>;
+	volume: number | undefined;
+}
+
+export interface IplayState {
+	playState: IMediaControlsSegments;
+	mediaVideoRef: MutableRefObject<HTMLVideoElement>;
+}
