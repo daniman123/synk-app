@@ -5,7 +5,7 @@ const ChatBody = ({ messages }: IChatBody) => {
 	return (
 		<div
 			className="bg-black flex flex-col-reverse overflow-y-scroll overscroll-y-contain py-1"
-			style={{ height: "calc(880px - 6rem)" }}
+			style={{ height: "calc(100dvh - 51px - 5rem)" }}
 		>
 			{messages
 				.slice()
