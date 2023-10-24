@@ -1,6 +1,5 @@
 import NavBar from "../../../components/Layouts/nav/NavBar";
 import SecondaryLayout from "../secondary/SecondaryLayout";
-import "./PrimaryLayout.css";
 
 export interface PrimaryLayoutProps {
 	children: React.ReactNode;
@@ -8,9 +7,10 @@ export interface PrimaryLayoutProps {
 
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
-		<section className="primary-layout">
+		<main className="min-h-full max-w-full relative">
 			<NavBar />
+			{/* <section className="h-[200vh]"></section> */}
 			<SecondaryLayout>{children}</SecondaryLayout>
-		</section>
+		</main>
 	);
 }
