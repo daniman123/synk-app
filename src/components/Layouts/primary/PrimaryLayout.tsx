@@ -9,7 +9,6 @@ export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
 		<main className="min-h-full max-w-full relative">
 			<NavBar />
-			{/* <section className="h-[200vh]"></section> */}
 			<SecondaryLayout>{children}</SecondaryLayout>
 		</main>
 	);

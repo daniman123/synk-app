@@ -49,12 +49,13 @@ const MediaPlayerControls = ({ mediaVideoRef }: IMediaPlayerControls) => {
 	return (
 		<div
 			id="media-player-controls-container"
+			
 			className="absolute inset-x-0 bottom-0 z-10 opacity-0 transition-opacity ease-in-out delay-150 group-hover:opacity-100
 				before:absolute before:bottom-0 before:w-full before:z-0 before:pointer-events-none before:h-32 before:opacity-70 before:bg-gradient-to-t before:from-black before:to-transparent"
 		>
 			<div
 				id="media-player-controls"
-				className="flex justify-between px-5 pb-2 z-10"
+				className="flex justify-between z-10"
 			>
 				<MediaControlsSegments
 					playState={playState}

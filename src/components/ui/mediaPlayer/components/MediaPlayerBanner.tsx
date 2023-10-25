@@ -2,26 +2,16 @@ import React from "react";
 
 const MediaPlayerBanner = () => {
 	return (
-		<div className="grid grid-cols-6 shadow-2xl">
-			<div className="grid">
-				<div className="row-span-full flex justify-center items-center">
-					<div className="h-full w-full text-center">PFP</div>
+		<div className="flex h-[10%] w-full bg-blue-500 justify-between">
+			<div className="flex w-[70%]">
+				<div className="w-[20%]">PFP</div>
+				<div className="block w-[80%]">
+					<p className="text-lg truncate">Username</p>
+					<p className="text-base truncate">Title</p>
+					<p className="text-sm truncate">Category</p>
 				</div>
 			</div>
-			<div className="grid grid-rows-5 col-span-4">
-				<div className="flex justify-start items-center row-span-2 p-1">
-					name
-				</div>
-				<div className="flex justify-start items-center pl-1 truncate">
-					Title
-				</div>
-				<div className="flex justify-start items-center row-span-1 pl-1 truncate">
-					Category
-				</div>
-			</div>
-			<div className="flex justify-center items-start pt-2">
-				<div>ViewerCount 12.3k</div>
-			</div>
+			<p>ViewerCount</p>
 		</div>
 	);
 };
