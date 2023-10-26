@@ -1,19 +1,22 @@
+import ChatBody from "@/components/ui/viewerChat/components/ChatBody";
 import MediaPlayer from "../../ui/mediaPlayer/MediaPlayer";
 import MediaPlayerBanner from "../../ui/mediaPlayer/components/MediaPlayerBanner";
 // import ViewerChat from "../../ui/viewerChat/ViewerChat";
+
+import mockChatMessagesData from "../../../../lib/chat/CHAT_MESSAGES_MOCK_DATA.json";
+import ChatInputField from "@/components/ui/viewerChat/components/ChatInputField";
 
 const ViewerPage = () => {
 	return (
 		<div className="md:flex h-full w-full">
 			<div className="block max-sm:w-full w-[calc(100%-16dvw)] max-lg:w-[calc(100%-30dvw)]">
-				<video src="" className="max-md:w-full bg-red-500"></video>
-				<div className="max-sm:h-[7dvh]">video banner</div>
-				
-				{/* <MediaPlayer /> */}
-				{/* <MediaPlayerBanner /> */}
+				<MediaPlayer />
+				<MediaPlayerBanner />
 			</div>
-			<div className="">chat</div>
-			{/* <div className="h-full w-[16dvw] max-lg:w-[30dvw] bg-slate-700">chat</div> */}
+			<div className="max-sm:h-[35dvh] h-full max-sm:w-full w-[16dvw] max-lg:w-[30dvw] bg-slate-700">
+				<ChatBody messages={mockChatMessagesData} />
+				<ChatInputField />
+			</div>
 		</div>
 	);
 };

@@ -46,9 +46,39 @@ export const UserCardList = ({ mock }: { mock: any[] }) => {
 };
 
 const SecondaryLayout = ({ children }: ISecondaryLayout) => {
+	const { sideBarToggled, isToggled } = useLayoutStore();
+	const size = sideBarToggled ? "expanded" : "collapsed";
+	const adjustedLen = sideBarToggled
+		? "lg:w-[calc(100dvw-12dvw)]"
+		: "sm:w-[calc(100dvw-5dvw)]";
+
 	return (
-		<section className="">
-			<section> </section>
+		<section className="flex w-[100dvw]">
+			<section
+				className={`fixed top-[5.5dvh] h-[calc(100dvh-5.5dvh)] ${isToggled[size]?.sideBar} min-w-[2rem] pl-[1vw] pr-1 overflow-x-hidden bg-black`}
+			>
+				{sideBarToggled && (
+					<div className="grid w-full overflow-x-hidden">
+						<div
+							id="action-buttons"
+							className="grid h-[12dvh] grid-rows-3 border-b pb-1 "
+						>
+							<Button name="Home" />
+							<Button name="Peeks" />
+							<Button name="Pulse" />
+						</div>
+
+						<UserCardList mock={mock7} />
+						<UserCardList mock={mock3} />
+					</div>
+				)}
+			</section>
+
+			<section
+				className={`h-[calc(100dvh-5.5dvh)] ${adjustedLen} mt-[5.5dvh] ${isToggled[size]?.content} w-[calc(100dvw-5dvw)]`}
+			>
+				{/* {children} */}
+			</section>
 		</section>
 	);
 };

@@ -4,8 +4,7 @@ import ChatMessage from "./ChatMessage";
 const ChatBody = ({ messages }: IChatBody) => {
 	return (
 		<div
-			className="bg-black flex flex-col-reverse overflow-y-scroll overscroll-y-contain py-1"
-			style={{ height: "calc(100dvh - 51px - 5rem)" }}
+			className="bg-black max-sm:h-full md:h-[calc(100dvh-51px-5rem)] flex flex-col-reverse overflow-y-scroll overscroll-y-contain py-1"
 		>
 			{messages
 				.slice()

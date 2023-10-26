@@ -20,11 +20,11 @@ const ChatInputField = () => {
 					ref={textareaRef}
 					placeholder="Type in chat ..."
 					onChange={handleInputChange}
-					className="w-[80%] ml-1 rounded overflow-auto outline-none border bg-slate-900 resize-none p-1 absolute bottom-6 placeholder:text-xs placeholder:font-bold"
+					className=" w-[80%] ml-1 rounded overflow-auto outline-none border bg-slate-900 resize-none p-1 absolute bottom-6 placeholder:text-xs placeholder:font-bold"
 				></textarea>
 				<button
 					type="submit"
-					className="h-[43px] border w-14 rounded absolute bottom-6 right-2"
+					className="h-[43px] border w-14 rounded absolute bottom-6 right-2 max-sm:right-0"
 				>
 					Chat
 				</button>
