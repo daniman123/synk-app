@@ -17,7 +17,7 @@ export const useLayoutStore = create<LayoutStore>((set) => ({
 	sideBarToggled: true,
 	isToggled: {
 		expanded: { content: "md:ml-[12dvw]", sideBar: "w-[12dvw]" },
-		collapsed: { content: "ml-[6dvw]", sideBar: "w-[5dvw]" },
+		collapsed: { content: "max-sm:ml-1 ml-[5dvw]", sideBar: "max-sm:hidden w-[5dvw]" },
 	},
 	size: "expanded",
 	setSize: () =>
