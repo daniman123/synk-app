@@ -31,3 +31,15 @@ export interface IplayState {
 	playState: IMediaControlsSegments;
 	mediaVideoRef: MutableRefObject<HTMLVideoElement>;
 }
+
+export interface IMediaPlayer {
+	src: string;
+}
+
+export interface IMediaPlayerBanner {
+	pfpSrc: string;
+	userName: string;
+	title: string;
+	category: string;
+	viewCount: number;
+}
