@@ -46,9 +46,58 @@ export const UserCardList = ({ mock }: { mock: any[] }) => {
 };
 
 const SecondaryLayout = ({ children }: ISecondaryLayout) => {
+	const { sideBarToggled } = useLayoutStore();
+
+	const sidebarMobileDimsHidden =
+		"max-sm:opacity-0  max-sm:translate-x-[-100%] transition-transform transition-opacity duration-300 transform";
+	const sidebarMobileDims =
+		"max-sm:h-full max-sm:w-full max-sm:opacity-100  max-sm:translate-x-0 transition-transform transition-opacity duration-300 transform";
+
 	return (
-		<section className="">
-			<section> </section>
+		<section
+			className="flex
+						max-sm:mt-[10dvh]"
+		>
+			<section
+				id="sidebar"
+				className={`fixed bg-black ${
+					sideBarToggled ? sidebarMobileDimsHidden : sidebarMobileDims
+				}`}
+			>
+				<div
+					className="
+								max-sm:grid max-sm:mt-[15dvh] max-sm:h-[50dvh] max-sm:grid-cols-2 max-sm:py-5 max-sm:px-2"
+				>
+					<div
+						id="menu"
+						className="place-content-center border-r 
+									max-sm:px-2
+								
+					"
+					>
+						<div id="actionButtons" className="grid max-sm:h-full">
+							<Button name="Home" />
+							<Button name="Peeks" />
+							<Button name="Pulse" />
+						</div>
+					</div>
+					<div
+						id="session"
+						className="
+									max-sm:grid max-sm:px-2"
+					>
+						<Button name="Sign Up" />
+						<Button name="Log In" />
+					</div>
+				</div>
+			</section>
+			<section
+				id="content"
+				className="
+				max-sm:h-[90dvh] max-sm:w-full max-sm:p-1"
+			>
+				content
+			</section>
 		</section>
 	);
 };

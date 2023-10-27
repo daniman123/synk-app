@@ -8,15 +8,19 @@ export const NavLeft = (): JSX.Element => {
 	const { toggleSideBar, expandSideBar } = useLayoutStore();
 	return (
 		<>
-			<span
-				className="opacity-95 hover:opacity-100 cursor-pointer"
+			<p
+				id="burger"
+				className="opacity-95 hover:opacity-100 cursor-pointer text-center 
+							max-sm:text-2xl max-sm:px-2"
 				onClick={toggleSideBar}
 			>
 				☰
-			</span>
+			</p>
 			<Link href="/">
 				<button
-					className="opacity-95 hover:opacity-100"
+					id="logo"
+					className="opacity-95 hover:opacity-100 cursor-pointer text-center 
+												max-sm:text-2xl"
 					onClick={expandSideBar}
 				>
 					SYNK
