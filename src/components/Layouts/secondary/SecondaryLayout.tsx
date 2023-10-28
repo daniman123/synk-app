@@ -12,7 +12,8 @@ const SecondaryLayout = ({ children }: ISecondaryLayout) => {
 	return (
 		<section
 			className="flex
-						max-sm:mt-[10dvh]"
+						max-sm:mt-[10dvh]
+						md:mt-[7dvh]"
 		>
 			<SideBar />
 			<section
@@ -20,7 +21,7 @@ const SecondaryLayout = ({ children }: ISecondaryLayout) => {
 				className="
 				max-sm:h-[90dvh] max-sm:w-full max-sm:p-1"
 			>
-				{children}
+				{/* {children} */}
 			</section>
 		</section>
 	);
