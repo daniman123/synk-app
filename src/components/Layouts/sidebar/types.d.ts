@@ -1,4 +1,4 @@
-export interface ChannelListElement {
+export interface IUserCard {
 	id: string;
 	userName: string;
 	viewers: number;

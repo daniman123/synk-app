@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutStore } from "../../../store/layoutStore";
+import UserCard from "./components/UserCard";
 // import { ExpandedSideBar } from "./components/expanded/expandedSideBar";
 // import { ChannelLists } from "./types";
 
@@ -14,9 +15,7 @@ export const Button = ({ name }: { name: string }) => {
 };
 
 
-export const UserCard = () => {
-  return <p className="hover:bg-slate-400 rounded cursor-pointer h-[5dvh]">usercard</p>;
-};
+
 
 export const UserCardList = ({ mock }: { mock: any[] }) => {
   return (
@@ -30,7 +29,7 @@ export const UserCardList = ({ mock }: { mock: any[] }) => {
       </ul>
     </>
   );
-};
+};    
 
 const SideBar = (): JSX.Element => {
   const isSideBarToggled = useLayoutStore((state) => state.sideBarToggled);
