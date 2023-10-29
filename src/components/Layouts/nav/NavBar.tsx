@@ -2,8 +2,6 @@ import { NavLeft } from "./components/navLeft";
 // import { NavCenter } from "./components/navCenter";
 // import { NavRight } from "./components/navRight";
 
-
-
 export const NavSegment = ({
 	children,
 	classes,
@@ -17,9 +15,11 @@ export const NavSegment = ({
 const NavBar = (): JSX.Element => {
 	return (
 		<header
-			className="bg-white fixed top-0 left-0 right-0 w-full 
-			max-sm:h-[10dvh] 
-			md:h-[7dvh]
+			className="fixed top-0 left-0 right-0 w-full
+			sm:h-[10dvh] 
+			md:h-[3rem]
+			lg:h-[3rem]
+			
 			"
 		>
 			<nav
@@ -43,8 +43,12 @@ const NavBar = (): JSX.Element => {
 					</button>
 				</NavSegment>
 				<NavSegment classes="max-sm:hidden justify-end gap-3 pr-2">
-					<button className="text-sm hover:underline hover:underline-offset-4 ">Log In</button>
-					<button className="text-sm hover:underline hover:underline-offset-4 ">Sign Up</button>
+					<button className="text-sm hover:underline hover:underline-offset-4 ">
+						Log In
+					</button>
+					<button className="text-sm hover:underline hover:underline-offset-4 ">
+						Sign Up
+					</button>
 				</NavSegment>
 			</nav>
 		</header>

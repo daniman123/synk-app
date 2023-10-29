@@ -4,34 +4,34 @@
 @tailwind variants;
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  color: aliceblue;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: aliceblue;
 }
 
 body {
-  min-height: 100dvh;
-  max-width: 100dvw;
-  background: linear-gradient(to top, #09203f 0%, #537895 100%);
-  font-family: "Inter latin", sans-serif;
+	/* height: 100dvh; */
+	/* max-width: 100dvw; */
+	background: linear-gradient(to top, #09203f 0%, #537895 100%);
+	font-family: "Inter latin", sans-serif;
 
-  font-size: 2dvh;
+	/* font-size: 2dvh; */
 }
 
 body::-webkit-scrollbar {
-  display: none;
+	/* display: none; */
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+	width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
+	background-color: #888;
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+	background-color: #f1f1f1;
 }

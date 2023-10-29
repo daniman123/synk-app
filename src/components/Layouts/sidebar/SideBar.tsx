@@ -35,7 +35,7 @@ const SideBar = (): JSX.Element => {
   const isSideBarToggled = useLayoutStore((state) => state.sideBarToggled);
 
   const sidebarMobileDimsHidden =
-    "md:h-full md:w-[30dvh] max-sm:opacity-0  max-sm:translate-x-[-100%] transition-transform transition-opacity duration-300 transform";
+    "md:h-full md:w-[30dvw] max-sm:opacity-0  max-sm:translate-x-[-100%] transition-transform transition-opacity duration-300 transform";
   const sidebarMobileDims =
     "md:opacity-0  md:translate-x-[-100%]  max-sm:h-full max-sm:w-full max-sm:opacity-100  max-sm:translate-x-0 transition-transform transition-opacity duration-300 transform ";
 

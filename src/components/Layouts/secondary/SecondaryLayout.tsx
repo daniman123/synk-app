@@ -11,16 +11,16 @@ export interface ISecondaryLayout {
 const SecondaryLayout = ({ children }: ISecondaryLayout) => {
 	return (
 		<section
-			className="flex
-						max-sm:mt-[10dvh]
-						md:mt-[7dvh]"
+			className="flex relative md:h-[calc(100dvh-3rem)] md:mt-[3rem]"
 		>
 			<SideBar />
 			<section
 				id="content"
 				className="
-				max-sm:h-[90dvh] max-sm:w-full max-sm:p-1"
+				md:ml-[30dvh] md:w-[calc(100dvw-30dvw)]
+				sm:h-[90dvh] max-sm:w-full max-sm:p-1"
 			>
+				You
 				{/* {children} */}
 			</section>
 		</section>

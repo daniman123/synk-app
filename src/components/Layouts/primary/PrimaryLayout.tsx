@@ -7,7 +7,7 @@ export interface PrimaryLayoutProps {
 
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
-		<main className="w-full min-h-full max-w-full relative">
+		<main id="primary" className="w-full max-h-[100dvh] max-w-full">
 			<NavBar />
 			<SecondaryLayout>{children}</SecondaryLayout>
 		</main>
