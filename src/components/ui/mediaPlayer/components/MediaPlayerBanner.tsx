@@ -13,24 +13,24 @@ const MediaPlayerBanner = ({
 		<div
 			id="videoBanner"
 			className="flex justify-between rounded-sm 
-											max-sm:pb-2"
+											pb-2"
 		>
-			<div className="flex justify-center items-center max-sm:w-1/5">
-				<ProfilePicture src={pfpSrc} alt="" height="max-sm:h-[75%]" />
+			<div className="flex justify-center items-center w-1/5">
+				<ProfilePicture src={pfpSrc} alt="" height="h-[75%]" />
 			</div>
-			<div className="max-sm:w-2/3 max-sm:pl-5">
-				<p className="truncate max-sm:text-base">{userName}</p>
-				<p className="truncate max-sm:text-sm">{title}</p>
-				<p className="truncate max-sm:text-xs">{category}</p>
+			<div className="w-2/3 pl-5">
+				<p className="truncate text-base">{userName}</p>
+				<p className="truncate text-sm">{title}</p>
+				<p className="truncate text-xs">{category}</p>
 			</div>
-			<div className="flex items-center justify-center max-sm:w-1/6">
+			<div className="flex items-center justify-center w-1/6">
 				<LiveViewCount
 					viewCount={viewCount}
-					height="max-sm:h-5"
-					width="max-sm:w-full"
-					fontSize="max-sm:text-sm"
-					onAirSymbolheight="max-sm:h-2"
-					onAirSymbolwidth="max-sm:w-2"
+					height="h-5"
+					width="w-full"
+					fontSize="text-sm"
+					onAirSymbolheight="h-2"
+					onAirSymbolwidth="w-2"
 				/>
 			</div>
 		</div>

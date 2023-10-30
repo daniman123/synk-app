@@ -7,7 +7,7 @@ import { IMediaPlayer } from "./types";
 const MediaPlayer = ({ src }: IMediaPlayer) => {
 	const mediaVideoRef = useRef<HTMLVideoElement>(null);
 	return (
-		<div className="flex justify-center relative group">
+		<div className="flex justify-center relative group lg:h-[90%]">
 			<video
 				ref={mediaVideoRef}
 				src={src}

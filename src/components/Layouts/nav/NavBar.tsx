@@ -14,7 +14,7 @@ export const NavSegment = ({
 
 const NavBar = (): JSX.Element => {
   return (
-    <header className="fixed top-0 left-0 right-0 w-full h-12">
+    <header className="fixed z-10 top-0 left-0 right-0 w-full h-12">
       <nav
         className="bg-red-600 grid h-full w-full 
 				max-sm:grid-cols-2 md:grid-cols-3"

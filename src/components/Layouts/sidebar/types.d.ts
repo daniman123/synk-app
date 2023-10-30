@@ -8,9 +8,9 @@ export interface IUserCard {
 }
 
 export interface ChannelsList {
-	channels: ChannelListElement[];
+	userCardData: IUserCard[];
 	channelListTitle: string;
-	defaultDisplay: number;
+	defaultDisplayNum: number;
 }
 
 export interface FollowedChannelsList {

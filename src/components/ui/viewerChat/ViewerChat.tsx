@@ -6,7 +6,7 @@ const ViewerChat = () => {
 	return (
 		<div
 			className="max-h-screen rounded bg-blue-950 border-2 border-opacity-5 border-gray-400
-						max-sm:h-[45dvh] max-sm:w-full			
+						max-sm:h-[45dvh] max-lg:h-48 max-md:w-full		
 		"
 		>
 			<ChatBody messages={mockChatMessagesData} />
