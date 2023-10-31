@@ -1,18 +1,13 @@
-import { NavLeft } from "./components/navLeft";
-// import { NavCenter } from "./components/navCenter";
-// import { NavRight } from "./components/navRight";
-
-export const NavSegment = ({
-  children,
-  classes,
-}: {
-  children: React.ReactNode;
-  classes: string;
-}) => {
-  return <div className={`flex items-center ${classes}`}>{children}</div>;
-};
+import { useLayoutStore } from "@/store/layoutStore";
+import { NavSegment } from "./components/NavSegment";
+import NavLogo from "./components/NavLogo";
+import ToggleSideBar from "./components/ToggleSideBar";
+import SearchBar from "@/components/features/searchBar/SearchBar";
+import Auth from "@/components/features/auth/Auth";
 
 const NavBar = (): JSX.Element => {
+  const { toggleSideBar, expandSideBar } = useLayoutStore();
+
   return (
     <header className="fixed z-10 top-0 left-0 right-0 w-full h-12">
       <nav
@@ -20,28 +15,14 @@ const NavBar = (): JSX.Element => {
 				max-sm:grid-cols-2 md:grid-cols-3"
       >
         <NavSegment classes="gap-5">
-          <NavLeft />
+          <ToggleSideBar toggleSideBar={toggleSideBar} />
+          <NavLogo expandSideBar={expandSideBar} />
         </NavSegment>
-        <NavSegment classes="md:flex md:justify-center">
-          <input
-            type="text"
-            className="rounded-l outline-none text-slate-600
-						w-2/4 h-7 text-base indent-1"
-          />
-          <button
-            className="border rounded-r outline-none
-						h-7 w-8"
-          >
-            X
-          </button>
+        <NavSegment classes="md:justify-center">
+          <SearchBar />
         </NavSegment>
         <NavSegment classes="max-sm:hidden justify-end gap-3 pr-2">
-          <button className="text-sm hover:underline hover:underline-offset-4 ">
-            Log In
-          </button>
-          <button className="text-sm hover:underline hover:underline-offset-4 ">
-            Sign Up
-          </button>
+          <Auth />
         </NavSegment>
       </nav>
     </header>

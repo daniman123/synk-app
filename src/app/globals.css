@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar {
-	width: 7px;
+	width: .3rem;
 }
 
 ::-webkit-scrollbar-thumb {

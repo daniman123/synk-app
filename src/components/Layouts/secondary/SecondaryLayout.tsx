@@ -14,7 +14,7 @@ const SecondaryLayout = ({ children }: ISecondaryLayout) => {
 				recommended={jsonDataRecommended}
 			/>
 			<section id="content" className="w-full h-full">
-				{children}
+				{/* {children} */}
 			</section>
 		</section>
 	);

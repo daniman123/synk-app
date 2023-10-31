@@ -24,7 +24,7 @@ const preview: Preview = {
 		},
 		viewport: {
 			viewports: { asusVivoBook, ...MINIMAL_VIEWPORTS },
-			defaultViewport: "mobile1",
+			// defaultViewport: "mobile1",
 		},
 
 		layout: "fullscreen",
