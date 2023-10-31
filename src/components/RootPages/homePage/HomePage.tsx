@@ -1,7 +1,6 @@
 import React from "react";
 import HeroSection from "./components/heroSection/HeroSection";
 import { mockHeroSectionProps } from "./components/heroSection/HeroSection.mocks";
-import "./HomePage.css";
 import withCustomMediaPreviewItem from "@/components/ui/mediaPreview/components/RenderMediaPreviews";
 import {
 	ClipsPreviewItem,
@@ -45,10 +44,10 @@ const RenderPeeksPreviews = enhanceWithCustomMediaPreviewItem(
 );
 
 const HomePage: React.FC = () => (
-	<main className="content-main">
+	<section className="">
 		<HeroSection src={mockHeroSectionProps.base.src} />
 
-		<MediaPreview
+		{/* <MediaPreview
 			MediaGrid={RenderVideoPreviews}
 			gridName="Trending"
 			gridType="video"
@@ -67,8 +66,8 @@ const HomePage: React.FC = () => (
 			gridName="Clips"
 			gridType="video"
 			previewItemsArrayData={mockMediaPreviewsProps}
-		/>
-	</main>
+		/> */}
+	</section>
 );
 
 HomePage.displayName = "HomePage";

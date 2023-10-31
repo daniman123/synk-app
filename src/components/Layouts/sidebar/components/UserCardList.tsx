@@ -7,13 +7,12 @@ export const UserCardList = ({
   channelListTitle,
 }: ChannelsList) => {
   return (
-    <ul className="grid relative max-sm:hidden w-full">
+    <ul className="grid relative max-sm:hidden max-w-full w-full border-b mb-2">
       <h4 className="h-7">{channelListTitle}</h4>
       {userCardData.slice(0, defaultDisplayNum).map((data, ind) => (
           <UserCard key={ind} {...data} />
         ))}
-      {/* <UserCard {...userCardData[0]} /> */}
-      <button className="underline text-sm pb-4">show more</button>
+      <button className="underline text-sm pb-4 mt-2">show more</button>
     </ul>
   );
 };

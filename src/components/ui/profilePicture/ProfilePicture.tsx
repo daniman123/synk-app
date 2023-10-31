@@ -8,7 +8,7 @@ export interface IProfilePicture {
 
 const ProfilePicture = ({ src, alt, height }: IProfilePicture) => {
 	return (
-		<div className={`relative rounded-full aspect-square w-auto ${height}`}>
+		<div className={`relative rounded-full aspect-square ${height}`}>
 			<Image
 				src={src}
 				alt={alt}
