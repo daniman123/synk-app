@@ -1,75 +1,21 @@
-import React from "react";
-import HeroSection from "./components/heroSection/HeroSection";
-import { mockHeroSectionProps } from "./components/heroSection/HeroSection.mocks";
-import withCustomMediaPreviewItem from "@/components/ui/mediaPreview/components/RenderMediaPreviews";
-import {
-	ClipsPreviewItem,
-	PeeksPreviewItem,
-	VideoPreviewItem,
-} from "@/components/ui/mediaPreview/components/MediaPreviewItem";
-import MediaPreview from "@/components/ui/mediaPreview/MediaPreview";
-import mockMediaPreviewsProps from "../../../../mockDataJson/MEDIA_PREVIEWS_MOCK_DATA.json";
-import { IVideoPreviewItem } from "@/components/ui/mediaPreview/types";
-
-const enhanceWithCustomMediaPreviewItem = (
-	Component:
-		| React.ComponentType<any>
-		| React.MemoExoticComponent<
-				({
-					imagePreview,
-					gridName,
-					gridType,
-					...rest
-				}: IVideoPreviewItem) => React.JSX.Element
-		  >,
-	displayName: string | undefined
-) => {
-	const EnhancedComponent = withCustomMediaPreviewItem(Component);
-	const MemoizedComponent = React.memo(EnhancedComponent);
-	MemoizedComponent.displayName = displayName;
-	return MemoizedComponent;
-};
-
-const RenderClipsPreviews = enhanceWithCustomMediaPreviewItem(
-	ClipsPreviewItem,
-	"RenderClipsPreviews"
-);
-const RenderVideoPreviews = enhanceWithCustomMediaPreviewItem(
-	VideoPreviewItem,
-	"RenderVideoPreviews"
-);
-const RenderPeeksPreviews = enhanceWithCustomMediaPreviewItem(
-	PeeksPreviewItem,
-	"RenderPeeksPreviews"
-);
+import { memo } from "react";
 
 const HomePage: React.FC = () => (
-	<section className="">
-		<HeroSection src={mockHeroSectionProps.base.src} />
-
-		{/* <MediaPreview
-			MediaGrid={RenderVideoPreviews}
-			gridName="Trending"
-			gridType="video"
-			previewItemsArrayData={mockMediaPreviewsProps}
-		/>
-
-		<MediaPreview
-			MediaGrid={RenderPeeksPreviews}
-			gridName="Peeks"
-			gridType="peeks"
-			previewItemsArrayData={mockMediaPreviewsProps.slice(4)}
-		/>
-
-		<MediaPreview
-			MediaGrid={RenderClipsPreviews}
-			gridName="Clips"
-			gridType="video"
-			previewItemsArrayData={mockMediaPreviewsProps}
-		/> */}
+	<section className="z-0 grid grid-rows-2 h-[200dvh]">
+		<section className="grid row-span-1 min-h-full w-full grid-rows-6">
+			<section
+				id="hero-section"
+				className="flex items-center justify-center row-span-3 px-40 py-20 bg-gradient-to-t from-[#dfe9f3] to-[#eeebec]"
+			>
+				<div className="flex w-full h-full items-center justify-center rounded shadow-lg text-9xl text-gray-950 font-bold bg-[whitesmoke]">SYNK</div>
+			</section>
+			<section className="row-span-2 bg-black"></section>
+			<section className="row-span-1 bg-digital"></section>
+		</section>
+		<section className="grid row-span-1 bg-digital"></section>
 	</section>
 );
 
 HomePage.displayName = "HomePage";
 
-export default React.memo(HomePage);
+export default memo(HomePage);

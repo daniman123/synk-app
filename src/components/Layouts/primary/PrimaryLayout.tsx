@@ -8,7 +8,7 @@ export interface PrimaryLayoutProps {
 export default function PrimaryLayout({ children }: PrimaryLayoutProps) {
 	return (
 		<main className="w-full h-[100dvh] max-w-full">
-			<header className="fixed z-10 top-0 left-0 right-0 w-full h-12">
+			<header className="fixed z-20 top-0 left-0 right-0 w-full h-12">
 				<NavBar />
 			</header>
 			<section

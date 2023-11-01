@@ -7,11 +7,10 @@ import Auth from "@/components/features/auth/Auth";
 
 const NavBar = (): JSX.Element => {
 	const { toggleSideBar, expandSideBar } = useLayoutStore();
-
 	return (
 		<nav
 			className="z-20 bg-[#284184] grid h-full w-full 
-				max-sm:grid-cols-2 md:grid-cols-3"
+				max-sm:grid-cols-2 md:grid-cols-3 shadow-xl"
 		>
 			<NavSegment classes="gap-5">
 				<ToggleSideBar toggleSideBar={toggleSideBar} />
