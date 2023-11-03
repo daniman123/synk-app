@@ -11,6 +11,7 @@ const Button = ({ buttonClickFn, children }: IButton) => (
 		className="opacity-80 hover:opacity-100 z-10"
 		onClick={buttonClickFn}
 	>
+		butoin
 		{children}
 	</button>
 );
