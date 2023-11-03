@@ -3,7 +3,7 @@ import HeroSection from "./components/heroSection/HeroSection";
 import BrowseSection from "./components/browseSection/BrowseSection";
 
 const HomePage: React.FC = () => (
-	<section className="z-0 grid grid-rows-2 h-[200dvh]">
+	<section className="grid grid-rows-2 h-[200dvh]">
 		<section className="grid row-span-1 h-full w-full grid-rows-6">
 			<section
 				id="hero-section"

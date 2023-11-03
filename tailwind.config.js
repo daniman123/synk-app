@@ -6,6 +6,10 @@ module.exports = {
 			backgroundColor: {
 				digital: "#284184",
 			},
+
+			textColor: {
+				digital: "#284184",
+			},
 		},
 	},
 	plugins: [],
