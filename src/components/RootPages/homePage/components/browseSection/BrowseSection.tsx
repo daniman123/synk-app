@@ -19,7 +19,7 @@ const BrowseSection = () => {
 
 	return (
 		<div className="flex h-full max-h-full justify-center pt-5">
-			<div className="w-full">
+			<div className="px-28">
 				<ul className="flex justify-center gap-14 mb-5">
 					<li
 						className={`${t} ${
@@ -46,7 +46,7 @@ const BrowseSection = () => {
 						Recommended
 					</li>
 				</ul>
-				<div className="h-2/3 mx-16 rounded py-3 bg-digital">
+				<div className="h-2/3 mx-16 rounded-lg py-3 bg-digital">
 					<MediaPreview />
 				</div>
 			</div>
