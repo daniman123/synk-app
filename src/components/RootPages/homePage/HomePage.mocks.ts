@@ -1,9 +1,11 @@
-import { IHomePage } from './HomePage';
+import { IHomePage } from "./types";
+import data from "../../../../lib/mediaPreviews/MEDIA_PREVIEWS_MOCK_DATA.json";
 
-    const base: IHomePage = {
-      exampleProp: 'Hello world!',
-    };
-    
-    export const mockHomePageProps = {
-      base,
-    };
+
+const base: IHomePage = {
+	dataArray: data,
+};
+
+export const mockHomePageProps = {
+	base,
+};
