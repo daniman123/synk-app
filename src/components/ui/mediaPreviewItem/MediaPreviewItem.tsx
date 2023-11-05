@@ -8,7 +8,7 @@ const MediaPreviewItem = ({
 	viewerCount,
 	category,
 }: IMediaPreviewItemData) => (
-	<div className="mt-3 grid h-[87%]">
+	<div className="mt-3 grid h-[87%] snap-center">
 		<div className="">
 			<div className="relative cursor-pointer aspect-video rounded-lg hover:rounded-none bg-white ">
 				<Image src={imagePreview} alt="" layout="fill" style={{ borderRadius: "inherit" }} />

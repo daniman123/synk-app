@@ -2,14 +2,7 @@ import MediaPreview from "@/components/ui/mediaPreview/MediaPreview";
 import React, { useState } from "react";
 import { IMediaPreviewItemArray } from "../../../../../../lib/mediaPreviews/types";
 
-// const tabContent: any = {
-// 	Featured: <p>This is the Featured content.</p>,
-// 	Following: <p>This is the Following content.</p>,
-// 	Recommended: <p>This is the Recommended content.</p>,
-// };
-
 const BrowseSection = ({ dataArray }: IMediaPreviewItemArray) => {
-	console.log("🚀 ~ file: BrowseSection.tsx:12 ~ BrowseSection ~ dataArray:", dataArray)
 	const [activeTab, setActiveTab] = useState("Featured");
 
 	const t = "cursor-pointer text-xl hover:opacity-100";
@@ -18,6 +11,12 @@ const BrowseSection = ({ dataArray }: IMediaPreviewItemArray) => {
 	const handleClick = (tabName: string) => {
 		setActiveTab(tabName);
 	};
+
+	// const tabContent: any = {
+	// 	Featured: <MediaPreview dataArray={dataArray} />,
+	// 	Following: <MediaPreview dataArray={dataArray} />,
+	// 	Recommended: <MediaPreview dataArray={dataArray} />,
+	// };
 
 	return (
 		<div className="flex h-full max-h-full justify-center pt-5">
@@ -48,7 +47,7 @@ const BrowseSection = ({ dataArray }: IMediaPreviewItemArray) => {
 						Recommended
 					</li>
 				</ul>
-				<div className="h-2/3 rounded-lg py-3 bg-digital">
+				<div className="relative h-2/3 max-h-2/3 rounded-lg py-3 bg-digital overflow-x-hidden">
 					<MediaPreview dataArray={dataArray} />
 				</div>
 			</div>
