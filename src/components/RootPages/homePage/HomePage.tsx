@@ -1,10 +1,11 @@
+import data from "../../../../lib/mediaPreviews/MEDIA_PREVIEWS_MOCK_DATA.json";
 import HeroSection from "./components/heroSection/HeroSection";
 import BrowseSection from "./components/browseSection/BrowseSection";
-import data from "../../../../lib/mediaPreviews/MEDIA_PREVIEWS_MOCK_DATA.json";
 import { IMediaPreviewItemArray } from "../../../../lib/mediaPreviews/types";
+import DiscoverSection from "./components/discoverSection/DiscoverSection";
 
 const HomePage = ({ dataArray }: IMediaPreviewItemArray) => {
-	console.log("🚀 ~ file: HomePage.tsx:7 ~ dataArray:", dataArray);
+	console.log("🚀 ~ file: HomePage.tsx:8 ~ HomePage ~ dataArray:", dataArray)
 	return (
 		<section className="grid grid-rows-2 h-[200dvh]">
 			<section className="grid row-span-1 h-full w-full grid-rows-6">
@@ -17,13 +18,15 @@ const HomePage = ({ dataArray }: IMediaPreviewItemArray) => {
 				<section id="browse-section" className="row-span-2 bg-black">
 					<BrowseSection dataArray={data} />
 				</section>
-				<section className="row-span-1 bg-digital"></section>
+				<section
+					id="discover-section"
+					className="h-[117dvh] row-span-1  bg-digital"
+				>
+					<DiscoverSection />
+				</section>
 			</section>
-			<section className="grid row-span-1 bg-digital"></section>
 		</section>
 	);
 };
-
-// HomePage.displayName = "HomePage";
 
 export default HomePage;
