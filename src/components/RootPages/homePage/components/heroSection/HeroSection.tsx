@@ -3,7 +3,7 @@ const cls = "bg-digital rounded-md shadow-2xl p-1";
 const HeroSection = () => {
 	return (
 		<div className="grid w-full h-full grid-cols-3 rounded p-3 bg-[whitesmoke]">
-			<h1 className="p-7 text-7xl text-gray-950 font-bold">SYNK</h1>
+			<h1 id="hero-section-logo" className="p-7 text-7xl text-gray-950 font-bold">SYNK</h1>
 			<div className="grid max-h-full grid-cols-3 grid-rows-6 h-full col-span-2 gap-1 p-1 text-gray-950 font-bold">
 				<div className={`${cls} col-start-1 row-start-1 row-span-5`}>
 					<h2 className="h-[20%] p-1 text-5xl">Trending</h2>
